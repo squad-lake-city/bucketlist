@@ -1,6 +1,6 @@
 'use strict';
 
-const store = require('../store');
+// const store = require('../store');
 
 // Bucketlist UI
 const getMapResultsSuccess = (data) => {
