@@ -1,6 +1,5 @@
 'use strict';
 
-const store = require('../store');
 
 // handlebars
 const displayBucketlistTemplate = require('../templates/bucketlist.handlebars');

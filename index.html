@@ -11,9 +11,14 @@
   <!-- Do not add `script` tags unless you know what you are doing -->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+<<<<<<< 8a1276973ef6015d98b077df3e9225a4b395fe49
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyAaPP2gFyioh2Ly38zAPNX3OHw5gpsmoNg" type="text/javascript"></script>
   <script src="assets/scripts/maps/map-logic.js" type="text/javascript"></script>
+=======
+
+  <!-- <script src="assets/scripts/maps/google-maps.js" type="text/javascript" charset="utf-8" defer></script> -->
+>>>>>>> Clean up
 </head>
 
 <body class="container-fluid">
@@ -56,12 +61,17 @@
 
   <form class="item" id="index-bl-item">
     <fieldset>
+<<<<<<< 8a1276973ef6015d98b077df3e9225a4b395fe49
     <legend>Index Bucketlist</legend>
+=======
+      <legend>Index Buckeklist</legend>
+>>>>>>> Clean up
       <div class="form-group">
         <button type="submit" class="btn btn-default">Show Bucketlist</button>
       </div>
     </fieldset>
   </form>
+<<<<<<< 8a1276973ef6015d98b077df3e9225a4b395fe49
 
   <form class="item" id="hide-index-bl-item">
     <fieldset>
@@ -71,24 +81,26 @@
       </div>
       </fieldset>
   </form>
+=======
+>>>>>>> Clean up
 
-    <form class="item" id="show-bl-item">
-      <fieldset>
-        <legend>Show Buckelist Item</legend>
-          <div class="form-group">
-            <input class='form-clear' id="show-bl-item-id" type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
-            <button type="submit" class="btn btn-default">Show Bucketlist Item</button>
-          </div>
-        </fieldset>
-      </form>
+  <form class="item" id="show-bl-item">
+    <fieldset>
+      <legend>Show Buckelist Item</legend>
+      <div class="form-group">
+        <input class='form-clear' id="show-bl-item-id" type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
+        <button type="submit" class="btn btn-default">Show Bucketlist Item</button>
+      </div>
+    </fieldset>
+  </form>
 
-    <form class="item" id="create-bl-item">
-      <fieldset>
-        <legend>Create Item</legend>
+  <form class="item" id="create-bl-item">
+    <fieldset>
+      <legend>Create Item</legend>
       <div class="form-group">
         <input class='form-clear' type="text" name="bucketlist[name]" placeholder="name">
-        <input class='form-clear' type="text" name="bucketlist[lng]" placeholder="lng">
-        <input class='form-clear' type="text" name="bucketlist[lat]" placeholder="lat">
+        <input class='form-clear' id="lng" type="text" name="bucketlist[lng]" placeholder="lng">
+        <input class='form-clear' id="lat" type="text" name="bucketlist[lat]" placeholder="lat">
         <input class='form-clear' type="text" name="bucketlist[place_id]" placeholder="place_id">
         <input class='form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
         <input class='form-clear' type="text" name="bucketlist[complete]" placeholder="Completed?">
@@ -96,21 +108,21 @@
         <button type="submit" class="btn btn-default">Create Bucketlist Item</button>
       </div>
     </fieldset>
-    </form>
+  </form>
 
-    <form class="item" id="delete-bl-item">
-      <fieldset>
-        <legend>Delete Buckelist Item</legend>
-          <div class="form-group">
-            <input class='form-clear' id="delete-bl-item-id" type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
-            <button type="submit" class="btn btn-default">Delete Bucketlist Item</button>
-          </div>
-        </fieldset>
-      </form>
+  <form class="item" id="delete-bl-item">
+    <fieldset>
+      <legend>Delete Buckelist Item</legend>
+      <div class="form-group">
+        <input class='form-clear' id="delete-bl-item-id" type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
+        <button type="submit" class="btn btn-default">Delete Bucketlist Item</button>
+      </div>
+    </fieldset>
+  </form>
 
   <form class="item" id="update-bl-item">
     <fieldset>
-    <legend>Update Item</legend>
+      <legend>Update Item</legend>
       <div class="form-group">
         <input class='form-clear' type="text" name="bucketlist-location[location]" placeholder="location">
         <input class='form-clear' type="text" name="bucketlist-location[name]" placeholder="name">
@@ -124,6 +136,7 @@
         <button type="submit" class="btn btn-default">Update Item</button>
       </div>
     </fieldset>
+<<<<<<< 8a1276973ef6015d98b077df3e9225a4b395fe49
     </form>
 
   <div class="log"></div>
@@ -307,7 +320,61 @@
           </table>
 
 
+=======
+  </form>
+>>>>>>> Clean up
 
+  <br><br>
+
+  <div id="locationField">
+    <input id="autocomplete" placeholder="Enter your address" type="text">
+  </div>
+  <table id="address">
+    <tr>
+      <td class="label">Street address</td>
+      <td class="slimField">
+        <input class="field" placeholder="Building Number" id="street_number">
+      </td>
+      <td class="wideField" colspan="2">
+        <input class="field" placeholder="Street" id="route">
+      </td>
+    </tr>
+    <tr>
+      <td class="label">City</td>
+      <td class="wideField" colspan="3">
+        <input class="field" placeholder="City" id="locality">
+      </td>
+    </tr>
+    <tr>
+      <td class="label">State</td>
+      <td class="slimField">
+        <input class="field" placeholder="State" id="administrative_area_level_1">
+      </td>
+      <td class="label">Zip code</td>
+      <td class="wideField">
+        <input class="field" placeholder="Postal Code" id="postal_code">
+      </td>
+    </tr>
+    <tr>
+      <td class="label">Country</td>
+      <td class="wideField" colspan="3">
+        <input class="field" placeholder="Country"id="country">
+      </td>
+    </tr>
+    <tr>
+      <td class="label">Lat</td>
+      <td class="slimField">
+        <input type="text" class="field" placeholder="Latitude" id="latitude">
+      </td>
+      <td class="label">Long</td>
+      <td class="wideField">
+        <input type="text" class="field" placeholder="Longitude" id="longitude">
+      </td>
+    </tr>
+  </table>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyAaPP2gFyioh2Ly38zAPNX3OHw5gpsmoNg" type="text/javascript"></script>
+  <script src="assets/scripts/maps/map-logic.js" type="text/javascript"></script>
 </body>
 
 </html>
