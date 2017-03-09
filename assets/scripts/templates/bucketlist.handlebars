@@ -1,9 +1,6 @@
 {{#each bucketlists as |bucketlist|}}
 
-    <!-- <small>{{show.date}}</small>
-    <small>{{show.band}}</small>
-    <small>{{show.venue}}</small>
-    <small>{{show.location}}</small> -->
+
     <table class="table table-hover">
       <thead>
         <tr>
@@ -18,7 +15,6 @@
           <th>bucketlist id</th>
         </tr>
       </thead>
-      <!-- {{#each bucketlists as |bucketlist|}} -->
       <tbody>
         <tr>
         <th scope="row" data-id="{{bucketlist.id}}"></th>
@@ -29,7 +25,7 @@
           <td>{{bucketlist.activity}}</td>
           <td>{{bucketlist.complete}}</td>
           <td>{{bucketlist.description}}</td>
-          <td>{{bucketlist.id}}</td>
+          <td>{{bucketlist._id}}</td>
         </tr>
       </tbody>
     </table>

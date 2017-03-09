@@ -26,6 +26,7 @@ const onCreateBucketlist = function(event) {
   let data = getFormFields(event.target);
   api.createBucketlist(data)
     .then((response) => {
+      console.log(response);
       store.currentBucketlistId = response.bucketlist.id;
       return store.currentBucketlistId;
     })
@@ -50,7 +51,7 @@ const onUpdateBucketlist = function(event) {
 };
 
 const addHandlers = () => {
-  $('#index-bl-item').on('submit', onGetBucketlist);
+  $('#index-bl-item').on('click', onGetBucketlist);
   $('#show-bl-item').on('submit', onShowBucketlist);
   $('#create-bl-item').on('submit', onCreateBucketlist);
   $('#delete-bl-item').on('submit', onDeleteBucketlist);
