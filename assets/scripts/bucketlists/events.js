@@ -50,7 +50,11 @@ const onUpdateBucketlist = function(event) {
 };
 
 const addHandlers = () => {
-
+  $('#index-bl-item').on('submit', onGetBucketlist);
+  $('#show-bl-item').on('submit', onShowBucketlist);
+  $('#create-bl-item').on('submit', onCreateBucketlist);
+  $('#delete-bl-item').on('submit', onDeleteBucketlist);
+  $('#update-bl-item').on('submit', onUpdateBucketlist);
 };
 
 module.exports = {

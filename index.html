@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Bucketlist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -11,7 +11,7 @@
   <!-- Do not add `script` tags unless you know what you are doing -->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-  <script src="assets/scripts/maps/google-maps.js" type="text/javascript" charset="utf-8" defer></script>
+  <!-- <script src="assets/scripts/maps/google-maps.js" type="text/javascript" charset="utf-8" defer></script> -->
 </head>
 
 <body class="container-fluid">
@@ -51,26 +51,29 @@
       <input type="submit" name="submit" value="Change Password">
     </fieldset>
   </form>
-  <form class="item" id="add-item">
+
+  <form class="item" id="index-bl-item">
     <fieldset>
-    <legend>Add Item</legend>
+    <legend>Index Buckeklist</legend>
       <div class="form-group">
-        <input class='form-clear' type="text" name="bucketlist-location[location]" placeholder="location">
-        <input class='form-clear' type="text" name="bucketlist-location[name]" placeholder="name">
-        <input class='form-clear' type="text" name="bucketlist-location[lng]" placeholder="lng">
-        <input class='form-clear' type="text" name="bucketlist-location[lat]" placeholder="lat">
-        <input class='form-clear' type="text" name="bucketlist-location[place_id]" placeholder="place_id">
-        <input class='form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
-        <input class='form-clear' type="text" name="bucketlist[complete]" placeholder="Completed?">
-        <input class='form-clear' type="text" name="bucketlist[description]" placeholder="description">
-        <input class='form-clear' type="text" name="bucketlist[User-id]" placeholder="user_id">
-        <button type="submit" class="btn btn-default">Add Item</button>
+        <button type="submit" class="btn btn-default">Index Bucketlist</button>
       </div>
     </fieldset>
     </form>
-  <form class="item" id="edit-item">
-    <fieldset>
-    <legend>Edit Item</legend>
+
+    <form class="item" id="show-bl-item">
+      <fieldset>
+        <legend>Show Buckelist Item</legend>
+          <div class="form-group">
+            <input class='form-clear' type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
+            <button type="submit" class="btn btn-default">Show Bucketlist Item</button>
+          </div>
+        </fieldset>
+      </form>
+
+    <form class="item" id="create-bl-item">
+      <fieldset>
+        <legend>Create Item</legend>
       <div class="form-group">
         <input class='form-clear' type="text" name="bucketlist-location[location]" placeholder="location">
         <input class='form-clear' type="text" name="bucketlist-location[name]" placeholder="name">
@@ -81,7 +84,36 @@
         <input class='form-clear' type="text" name="bucketlist[complete]" placeholder="Completed?">
         <input class='form-clear' type="text" name="bucketlist[description]" placeholder="description">
         <input class='form-clear' type="text" name="bucketlist[User-id]" placeholder="user_id">
-        <button type="submit" class="btn btn-default">Edit Item</button>
+        <button type="submit" class="btn btn-default">Create Bucketlist Item</button>
+      </div>
+    </fieldset>
+    </form>
+
+    <form class="item" id="delete-bl-item">
+      <fieldset>
+        <legend>Delete Buckelist Item</legend>
+          <div class="form-group">
+            <input class='form-clear' type="text" name="bucketlist[User-id]" placeholder="User ID">
+            <input class='form-clear' type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
+            <button type="submit" class="btn btn-default">Delete Bucketlist Item</button>
+          </div>
+        </fieldset>
+      </form>
+
+  <form class="item" id="update-bl-item">
+    <fieldset>
+    <legend>Update Item</legend>
+      <div class="form-group">
+        <input class='form-clear' type="text" name="bucketlist-location[location]" placeholder="location">
+        <input class='form-clear' type="text" name="bucketlist-location[name]" placeholder="name">
+        <input class='form-clear' type="text" name="bucketlist-location[lng]" placeholder="lng">
+        <input class='form-clear' type="text" name="bucketlist-location[lat]" placeholder="lat">
+        <input class='form-clear' type="text" name="bucketlist-location[place_id]" placeholder="place_id">
+        <input class='form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
+        <input class='form-clear' type="text" name="bucketlist[complete]" placeholder="Completed?">
+        <input class='form-clear' type="text" name="bucketlist[description]" placeholder="description">
+        <input class='form-clear' type="text" name="bucketlist[User-id]" placeholder="user_id">
+        <button type="submit" class="btn btn-default">Update Item</button>
       </div>
     </fieldset>
     </form>
@@ -121,8 +153,8 @@
       <span id="place-name"  class="title"></span><br>
       <span id="place-address"></span>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAblb3UX-C6IV7GEmeF4Y9xDkCBi3yiw7I&libraries=places&callback=initMap"
-        async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAblb3UX-C6IV7GEmeF4Y9xDkCBi3yiw7I&libraries=places&callback=initMap"
+        async defer></script> -->
 </body>
 
 </html>
