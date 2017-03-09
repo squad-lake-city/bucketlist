@@ -9,44 +9,44 @@ const store = require('../store');
 
 const onGetBucketlist = function(event) {
   event.preventDefault();
-  api.getStudents()
-    .done(ui.getStudentSuccess)
-    .fail(ui.getStudentFailure);
+  api.getBucketlist()
+    .done(ui.getBucketlistSuccess)
+    .fail(ui.getBucketlistFailure);
 };
 
 const onShowBucketlist = function(event) {
   event.preventDefault();
-  api.showStudent()
-    .done(ui.showStudentSuccess)
-    .fail(ui.showStudentFailure);
+  api.showBucketlist()
+    .done(ui.showBucketlistSuccess)
+    .fail(ui.showBucketlistFailure);
 };
 
 const onCreateBucketlist = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  api.createStudent(data)
+  api.createBucketlist(data)
     .then((response) => {
-      store.currentStudentId = response.student.id;
-      return store.currentStudentId;
+      store.currentBucketlistId = response.bucketlist.id;
+      return store.currentBucketlistId;
     })
-    .done(ui.createStudentSuccess)
-    .fail(ui.createStudentFailure);
+    .done(ui.createBucketlistSuccess)
+    .fail(ui.createBucketlistFailure);
 };
 
 const onDeleteBucketlist = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  api.deleteStudent(data)
-    .done(ui.deleteStudentSuccess)
-    .fail(ui.deleteStudentFailure);
+  api.deleteBucketlist(data)
+    .done(ui.deleteBucketlistSuccess)
+    .fail(ui.deleteBucketlistFailure);
 };
 
 const onUpdateBucketlist = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  api.updateStudent(data)
-    .done(ui.updateStudentSuccess)
-    .fail(ui.updateStudentFailure);
+  api.updateBucketlist(data)
+    .done(ui.updateBucketlistSuccess)
+    .fail(ui.updateBucketlistFailure);
 };
 
 const addHandlers = () => {

@@ -12,9 +12,11 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 const auth = require('./auth/events');
+const bucklist = require('./bucketlists/events');
 
 // require('./maps/google-maps');
 
 $(() => {
   auth.addHandlers();
+  bucklist.addHandlers();
 });

@@ -26,9 +26,6 @@ const showBucketlistFailure = (data) => {
 const createBucketlistSuccess = (data) => {
   console.log('create bucketlist success');
   console.log(data);
-  $("#new-bucketlist-form").hide();
-  $("#new-setting-form").show();
-  $("#create-setting-stud-id").attr("value", store.currentBucketlistId);
 };
 
 const createBucketlistFailure = (data) => {

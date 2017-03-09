@@ -65,7 +65,7 @@
       <fieldset>
         <legend>Show Buckelist Item</legend>
           <div class="form-group">
-            <input class='form-clear' type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
+            <input class='form-clear' id="show-bl-item-id" type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
             <button type="submit" class="btn btn-default">Show Bucketlist Item</button>
           </div>
         </fieldset>
@@ -83,7 +83,6 @@
         <input class='form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
         <input class='form-clear' type="text" name="bucketlist[complete]" placeholder="Completed?">
         <input class='form-clear' type="text" name="bucketlist[description]" placeholder="description">
-        <input class='form-clear' type="text" name="bucketlist[User-id]" placeholder="user_id">
         <button type="submit" class="btn btn-default">Create Bucketlist Item</button>
       </div>
     </fieldset>
@@ -93,8 +92,7 @@
       <fieldset>
         <legend>Delete Buckelist Item</legend>
           <div class="form-group">
-            <input class='form-clear' type="text" name="bucketlist[User-id]" placeholder="User ID">
-            <input class='form-clear' type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
+            <input class='form-clear' id="delete-bl-item-id" type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
             <button type="submit" class="btn btn-default">Delete Bucketlist Item</button>
           </div>
         </fieldset>
@@ -112,7 +110,7 @@
         <input class='form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
         <input class='form-clear' type="text" name="bucketlist[complete]" placeholder="Completed?">
         <input class='form-clear' type="text" name="bucketlist[description]" placeholder="description">
-        <input class='form-clear' type="text" name="bucketlist[User-id]" placeholder="user_id">
+        <input class='form-clear' id="update-bl-item-id" type="text" name="bucketlist[id]" placeholder="buckelist id">
         <button type="submit" class="btn btn-default">Update Item</button>
       </div>
     </fieldset>
