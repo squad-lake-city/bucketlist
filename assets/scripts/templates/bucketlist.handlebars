@@ -1,6 +1,4 @@
 {{#each bucketlists as |bucketlist|}}
-
-
     <table class="table table-hover">
       <thead>
         <tr>
@@ -15,8 +13,8 @@
           <th>bucketlist id</th>
         </tr>
       </thead>
+      <tr>
       <tbody>
-        <tr>
         <th scope="row" data-id="{{bucketlist.id}}"></th>
           <td>{{bucketlist.name}}</td>
           <td>{{bucketlist.lng}}</td>
@@ -26,22 +24,8 @@
           <td>{{bucketlist.complete}}</td>
           <td>{{bucketlist.description}}</td>
           <td>{{bucketlist._id}}</td>
+          <td><button data-id="{{bucketlist.id}}" type="button" name="button" class="remove-bucketlist-item glyphicon glyphicon-remove-sign"></button>
         </tr>
       </tbody>
     </table>
-  <!-- <div>
-    {{#if show.rating}}
-      {{show.rating}}
-    {{else}}
-      No rating
-    {{/if}}
-  </div>
-  <div>
-    {{#if show.notes}}
-      {{show.notes}}
-    {{else}}
-      No notes.
-    {{/if}}
-  </div> -->
-
 {{/each}}

@@ -12,6 +12,21 @@ html {
   padding: 0;
 }
 
+thead {
+  max-width: 50px;
+  word-wrap: break-word;
+}
+
+th {
+  max-width: 50px;
+  word-wrap: break-word;
+}
+
+td {
+  max-width: 50px;
+  word-wrap: break-word;
+}
+
 #description {
   font-family: Roboto;
   font-size: 15px;
