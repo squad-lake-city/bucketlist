@@ -86,10 +86,12 @@
       <fieldset>
         <legend>Create Item</legend>
       <div class="form-group">
-        <input class='form-clear' type="text" name="bucketlist[name]" placeholder="name">
-        <input class='form-clear' type="text" name="bucketlist[lng]" placeholder="lng">
-        <input class='form-clear' type="text" name="bucketlist[lat]" placeholder="lat">
-        <input class='form-clear' type="text" name="bucketlist[place_id]" placeholder="place_id">
+        <div id="locationField">
+          <input id="autocomplete" placeholder="Enter your address" type="text">
+        </div>
+        <input class='form-clear' type="text" name="bucketlist-location[location]" placeholder="location">
+        <input class='form-clear' type="text" name="bucketlist-location[place_id]" placeholder="place_id">
+        <input class='form-clear' type="text" name="bucketlist-location[name]" placeholder="name">
         <input class='form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
         <input class='form-clear' type="text" name="bucketlist[complete]" placeholder="Completed?">
         <input class='form-clear' type="text" name="bucketlist[description]" placeholder="description">
@@ -112,11 +114,12 @@
     <fieldset>
     <legend>Update Item</legend>
       <div class="form-group">
+        <div id="locationField">
+          <input id="autocomplete" placeholder="Enter your address" type="text">
+        </div>
         <input class='form-clear' type="text" name="bucketlist-location[location]" placeholder="location">
-        <input class='form-clear' type="text" name="bucketlist-location[name]" placeholder="name">
-        <input class='form-clear' type="text" name="bucketlist-location[lng]" placeholder="lng">
-        <input class='form-clear' type="text" name="bucketlist-location[lat]" placeholder="lat">
         <input class='form-clear' type="text" name="bucketlist-location[place_id]" placeholder="place_id">
+        <input class='form-clear' type="text" name="bucketlist-location[name]" placeholder="name">
         <input class='form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
         <input class='form-clear' type="text" name="bucketlist[complete]" placeholder="Completed?">
         <input class='form-clear' type="text" name="bucketlist[description]" placeholder="description">
@@ -259,9 +262,9 @@
           </fieldset>
           </form> -->
 
-          <div id="locationField">
+          <!-- <div id="locationField">
             <input id="autocomplete" placeholder="Enter your address" type="text">
-          </div>
+          </div> -->
           <table id="address">
             <tr>
               <td class="label">Street address</td>
