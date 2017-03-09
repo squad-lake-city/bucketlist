@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@google/maps": "^0.3.1",
+    "handlebars": "^4.0.6",
     "jquery": "^3.1.1"
   },
   "devDependencies": {

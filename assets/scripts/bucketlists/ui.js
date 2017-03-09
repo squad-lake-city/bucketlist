@@ -2,11 +2,31 @@
 
 const store = require('../store');
 
-// Bucketlist UI
-const getBucketlistSuccess = (data) => {
-  console.log('get bucketlist success');
-  console.log(data);
+// handlebars
+const displayBucketlistTemplate = require('../templates/bucketlist.handlebars');
+
+const getBucketlistSuccess = function (data) {
+  let displayBucketlistsHtml = displayBucketlistTemplate({ bucketlists: data.bucketlists });
+    console.log('get bucketlist success');
+  if (data.bucketlists.length >= 0){
+    $('.log').text("You have " + data.bucketlists.length + " items on your bucketlist");
+    // console.log(data);
+    $('.log').show();
+    $('.log-two').empty().append(displayBucketlistsHtml);
+} else {
+    $('.log-two').empty().append(displayBucketlistsHtml);
+    $('.log').val('');
+  }
 };
+
+
+
+// Bucketlist UI
+
+// const getBucketlistSuccess = (data) => {
+//   console.log('get bucketlist success');
+//   console.log(data);
+// };
 
 const getBucketlistFailure = (data) => {
   console.log('get bucketlist failure');
