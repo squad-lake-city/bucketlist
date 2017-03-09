@@ -2,7 +2,6 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
-require('./maps/fiddle');
 
 $(() => {
   setAPIOrigin(location, config);
@@ -13,11 +12,12 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 const auth = require('./auth/events');
+const bucklist = require('./bucketlists/events');
 const maps = require('./maps/events');
-// require('./maps/logic');
+const logic = require('./maps/map-logic');
 
 $(() => {
   auth.addHandlers();
+  bucklist.addHandlers();
   maps.addHandlers();
-  // map.addHandlers();
 });
