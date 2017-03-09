@@ -12,10 +12,10 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 const auth = require('./auth/events');
-const map = require('./maps/events');
-require('./maps/logic');
+// const map = require('./maps/events');
+// require('./maps/logic');
 
 $(() => {
   auth.addHandlers();
-  map.addHandlers();
+  // map.addHandlers();
 });
