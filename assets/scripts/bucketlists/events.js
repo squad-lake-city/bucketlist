@@ -14,6 +14,11 @@ const onGetBucketlist = function(event) {
     .fail(ui.getBucketlistFailure);
 };
 
+const onHideBucketlist= (event) => {
+  event.preventDefault();
+  ui.hideBucketlist();
+};
+
 const onShowBucketlist = function(event) {
   event.preventDefault();
   api.showBucketlist()
@@ -52,6 +57,7 @@ const onUpdateBucketlist = function(event) {
 
 const addHandlers = () => {
   $('#index-bl-item').on('click', onGetBucketlist);
+  $('#hide-index-bl-item').on('click', onHideBucketlist);
   $('#show-bl-item').on('submit', onShowBucketlist);
   $('#create-bl-item').on('submit', onCreateBucketlist);
   $('#delete-bl-item').on('submit', onDeleteBucketlist);

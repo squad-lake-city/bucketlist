@@ -19,6 +19,11 @@ const getBucketlistSuccess = function (data) {
   }
 };
 
+const hideBucketlist = () => {
+    $('.log-two').empty();
+    $('.log').hide();
+  };
+
 
 
 // Bucketlist UI
@@ -78,6 +83,7 @@ module.exports = {
   createBucketlistFailure,
   getBucketlistSuccess,
   getBucketlistFailure,
+  hideBucketlist,
   showBucketlistSuccess,
   showBucketlistFailure,
   updateBucketlistSuccess,
