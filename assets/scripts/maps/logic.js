@@ -2,7 +2,6 @@
 // of the Google Places API to help users fill in the information.
 'use strict';
 
-
 $( document ).ready(function() {
 
 $("#autocomplete").on('focus', function() {
