@@ -18,6 +18,7 @@ const getBucketlist = function() {
 const showBucketlist = function() {
   return $.ajax({
     url: config.apiOrigin + '/bucklists/' + document.getElementById("show-bl-item-id").value,
+    // url: config.apiOrigin + '/bucklists/' + store.
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,

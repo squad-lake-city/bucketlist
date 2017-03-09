@@ -15,7 +15,7 @@ const onGetMapResults = function(event) {
 };
 
 const addHandlers = () => {
-  $('#index-bl-item').on('submit', onGetMapResults);
+  $('#get-maps').on('submit', onGetMapResults);
 };
 
 module.exports = {
