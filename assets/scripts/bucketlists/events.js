@@ -3,7 +3,6 @@
 const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
-const store = require('../store');
 
 // Bucketlist EVENTS
 
@@ -33,9 +32,7 @@ const onCreateBucketlist = function(event) {
   api.createBucketlist(data)
     .then((response) => {
       console.log(response);
-      console.log(response.bucketlist.id);
-      store.currentBucketlistId = response.bucketlist.id;
-      return store.currentBucketlistId;
+      console.log(response.bucketlist._id);
     })
     .done(ui.createBucketlistSuccess)
     // .then(onGetBucketlist)
@@ -45,9 +42,9 @@ const onCreateBucketlist = function(event) {
 
 const onDeleteBucketlist = function(event) {
   event.preventDefault();
-  let _id = event.target.dataset.id;
+  let id = event.target.dataset.id;
   // let data = getFormFields(event.target);
-  api.deleteBucketlist(_id)
+  api.deleteBucketlist(id)
     .done(ui.deleteBucketlistSuccess)
     // .then(onGetBucketlist)
     .fail(ui.deleteBucketlistFailure);
@@ -71,7 +68,7 @@ const addHandlers = () => {
   $('#show-bl-item').on('submit', onShowBucketlist);
   $('#create-bl-item').on('submit', onCreateBucketlist);
   $('.content').on('click','.remove-bucketlist-item', onDeleteBucketlist);
-  $('.content').on('click', '.edit-bucketlist', onUpdateBucketlist);
+  $('.content').on('submit', '.edit-bucketlist', onUpdateBucketlist);
 };
 
 module.exports = {

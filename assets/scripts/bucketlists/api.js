@@ -7,7 +7,7 @@ const store = require('./../store');
 
 const getBucketlist = function() {
   return $.ajax({
-    url: config.apiOrigin + '/bucketlists/',
+    url: config.apiOrigin + '/bucketlists',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -27,7 +27,7 @@ const showBucketlist = function(id) {
 
 const createBucketlist = function(data) {
   return $.ajax({
-    url: config.apiOrigin + '/bucketlists/',
+    url: config.apiOrigin + '/bucketlists',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -36,9 +36,9 @@ const createBucketlist = function(data) {
   });
 };
 
-const deleteBucketlist = function() {
+const deleteBucketlist = function(id) {
   return $.ajax({
-    url: config.apiOrigin + '/bucketlists/' + store.currentBucketlistId,
+    url: config.apiOrigin + '/bucketlists/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token,
