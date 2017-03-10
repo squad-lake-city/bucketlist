@@ -33,21 +33,25 @@ const onCreateBucketlist = function(event) {
   api.createBucketlist(data)
     .then((response) => {
       console.log(response);
+      console.log(response.bucketlist.id);
       store.currentBucketlistId = response.bucketlist.id;
       return store.currentBucketlistId;
     })
     .done(ui.createBucketlistSuccess)
+    // .then(onGetBucketlist)
     .fail(ui.createBucketlistFailure);
+    // onGetBucketlist();
 };
 
 const onDeleteBucketlist = function(event) {
-
-  let id = event.target.dataset.id;
   event.preventDefault();
+  let _id = event.target.dataset.id;
   // let data = getFormFields(event.target);
-  api.deleteBucketlist(id)
+  api.deleteBucketlist(_id)
     .done(ui.deleteBucketlistSuccess)
+    // .then(onGetBucketlist)
     .fail(ui.deleteBucketlistFailure);
+    // onGetBucketlist();
 };
 
 const onUpdateBucketlist = function(event) {
@@ -56,7 +60,9 @@ const onUpdateBucketlist = function(event) {
   let id = event.target.dataset.id;
   api.updateBucketlist(data, id)
     .done(ui.updateBucketlistSuccess)
+    // .then(onGetBucketlist)
     .fail(ui.updateBucketlistFailure);
+    // onGetBucketlist();
 };
 
 const addHandlers = () => {
@@ -65,7 +71,7 @@ const addHandlers = () => {
   $('#show-bl-item').on('submit', onShowBucketlist);
   $('#create-bl-item').on('submit', onCreateBucketlist);
   $('.content').on('click','.remove-bucketlist-item', onDeleteBucketlist);
-  $('#update-bl-item').on('submit', onUpdateBucketlist);
+  $('.content').on('click', '.edit-bucketlist', onUpdateBucketlist);
 };
 
 module.exports = {

@@ -63,9 +63,9 @@ const deleteBucketlistSuccess = (data) => {
   console.log(data);
 };
 
-const deleteBucketlistFailure = (data) => {
+const deleteBucketlistFailure = (error) => {
   console.log('delete bucketlist failure');
-  console.log(data);
+  console.log(error);
 };
 
 const updateBucketlistSuccess = (data) => {
@@ -73,9 +73,9 @@ const updateBucketlistSuccess = (data) => {
   console.log(data);
 };
 
-const updateBucketlistFailure = (data) => {
+const updateBucketlistFailure = (error) => {
   console.log('update bucketlist failure');
-  console.log(data);
+  console.log(error);
 };
 
 module.exports = {

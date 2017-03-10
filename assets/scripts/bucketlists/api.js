@@ -36,9 +36,9 @@ const createBucketlist = function(data) {
   });
 };
 
-const deleteBucketlist = function(id) {
+const deleteBucketlist = function() {
   return $.ajax({
-    url: config.apiOrigin + '/bucketlists/' + id,
+    url: config.apiOrigin + '/bucketlists/' + store.currentBucketlistId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token,
