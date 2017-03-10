@@ -4,6 +4,7 @@ const store = require('../store');
 
 // handlebars
 const displayBucketlistTemplate = require('../templates/bucketlist.handlebars');
+const showBucketlistTemplate = require('../templates/show-bucketlist.handlebars');
 
 const getBucketlistSuccess = function (data) {
   let displayBucketlistsHtml = displayBucketlistTemplate({ bucketlists: data.bucketlists });
@@ -41,6 +42,9 @@ const getBucketlistFailure = (data) => {
 const showBucketlistSuccess = (data) => {
   console.log('show bucketlist success');
   console.log(data);
+  let showBucketlistHtml = showBucketlistTemplate({ bucketlist: data.bucketlist });
+  $('.content').empty().append(showBucketlistHtml);
+  $('.log').text('');
 };
 
 const showBucketlistFailure = (data) => {

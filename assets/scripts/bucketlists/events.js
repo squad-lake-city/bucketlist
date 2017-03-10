@@ -65,7 +65,7 @@ const onUpdateBucketlist = function(event) {
 const addHandlers = () => {
   $('#index-bl-item').on('click', onGetBucketlist);
   $('#hide-index-bl-item').on('click', onHideBucketlist);
-  $('#show-bl-item').on('submit', onShowBucketlist);
+  $('.content').on('click', '.show-bucketlist', onShowBucketlist);
   $('#create-bl-item').on('submit', onCreateBucketlist);
   $('.content').on('click','.remove-bucketlist-item', onDeleteBucketlist);
   $('.content').on('submit', '.edit-bucketlist', onUpdateBucketlist);
