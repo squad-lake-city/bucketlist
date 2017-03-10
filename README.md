@@ -1,7 +1,21 @@
-
 # BucketList
 
-README in production.
+## Deployed App
+[Bucketlist Front-end](https://squad-lake-city.github.io/bucketlist)
+
+## Back-End Repo
+[Bucketlist-Api Repo](https://github.com/squad-lake-city/bucketlist-api)
+
+## Development Process
+We started our project thinking about how we would approach implementing a
+location-based third-party API. So we decided to use the Google Maps API.
+Before putting that into our project, we decided that two of us would work on
+the Express API and one of us on the Front-End. We decided that we only needed
+one resource, named "bucketlists", and utilize all CRUD actions on it. So then
+we defined our AJAX requests for the token authentication. We also tested our
+bucketlist CRUD actions on the front-end by creating dummy forms. Then, we had
+to do research on the Google Maps API. This was the most difficult part to
+implement.
 
 ## User Stories
   - Auth
