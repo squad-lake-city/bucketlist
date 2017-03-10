@@ -4,6 +4,19 @@
 
 // require('jQuery');
 
+let longitude;
+let latitude;
+
+const createMap = function() {
+  let map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: longitude,
+        lng: latitude
+      },
+      zoom: 13
+    });
+}
+
 $(document).ready(function() {
 
   $("#autocomplete").on('focus', function() {
@@ -41,7 +54,11 @@ $(document).ready(function() {
     let place = autocomplete.getPlace();
     let storedPlaceId = place.place_id;
     $(".copied-place-id").val(storedPlaceId);
+    console.log(place);
 
+    longitude = parseFloat(place.geometry.location.lat());
+    console.log(longitude);
+    latitude = parseFloat(place.geometry.location.lng());
     document.getElementById("latitude").value = place.geometry.location.lat();
     document.getElementById("longitude").value = place.geometry.location.lng();
 
@@ -61,6 +78,7 @@ $(document).ready(function() {
     }
     let copyText = $("#autocomplete").val();
     $(".copied-autocomplete").val(copyText);
+    createMap();
   }
   // [END region_fillform]
 
@@ -85,4 +103,5 @@ $(document).ready(function() {
   }
   initialize();
 });
+
 // [END region_geolocation]
