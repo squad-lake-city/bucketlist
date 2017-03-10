@@ -55,11 +55,13 @@ const showBucketlistFailure = (data) => {
 const createBucketlistSuccess = (data) => {
   console.log('create bucketlist success');
   console.log(data);
+  $('.success').text('Item created!')
 };
 
 const createBucketlistFailure = (data) => {
   console.log('create bucketlist failure');
   console.log(data);
+  $('.create-failure').text('Item not created. Make sure all forms are filled out')
 };
 
 const deleteBucketlistSuccess = () => {

@@ -1,6 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+
+$red: #f00;
+$green: #008000;
+
 // Hides Default Address Table
 #address {
   display: none;
@@ -15,6 +19,15 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.failure {
+  color: $red;
+}
+
+.success {
+  color: $green;
+
 }
 
 thead {

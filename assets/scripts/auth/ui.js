@@ -2,7 +2,7 @@
 
 const signInSuccess = function() {
   console.log("sign-in success");
-  $('.signin-failure').text('Signed in!');
+  $('.signin-success').text('Signed in!');
 };
 
 const signInFailure = function() {
@@ -12,7 +12,7 @@ const signInFailure = function() {
 
 const signUpSuccess = function() {
   console.log("sign-up success");
-  $('.signup-failure').text('Signed up!');
+  $('.signup-success').text('Signed up!');
 };
 
 const signUpFailure = function() {
@@ -22,18 +22,22 @@ const signUpFailure = function() {
 
 const changePasswordSuccess = function() {
   console.log("change-password success");
+  $('.changepw-success').text('Successfully changed your password');
 };
 
 const changePasswordFailure = function() {
   console.log("change-password failure");
+  $('.changepw-failure').text('Change password attempt failed. Make sure you correctly entered your original password.');
 };
 
 const signOutSuccess = function() {
   console.log("sign-out success");
+  $('.signout-success').text('signed out!');
 };
 
 const signOutFailure = function() {
   console.log("sign-out failure");
+  $('.signout-failure').text('failed sign-out');
 };
 
 
