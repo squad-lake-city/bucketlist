@@ -3,7 +3,7 @@
 const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
-// const store = require('../store');
+const store = require('../store');
 const createMaps = require('../maps/create-map');
 // Bucketlist EVENTS
 
@@ -21,11 +21,11 @@ const onHideBucketlist = (event) => {
 
 const onShowBucketlist = function(event) {
   let id = event.target.dataset.id;
+  store.mapPlaceId = $(this).attr("data-placeid");
   event.preventDefault();
   api.showBucketlist(id)
     .done(ui.showBucketlistSuccess)
     .fail(ui.showBucketlistFailure);
-  createMaps.createMap();
 };
 
 const onCreateBucketlist = function(event) {

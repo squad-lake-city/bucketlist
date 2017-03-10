@@ -2,31 +2,19 @@
 
 const store = require('../store');
 
-const createMap = function() {
-  // Initialize the map.
-  function initMap() {
-     var map = new google.maps.Map(document.getElementById('map'), {
-       zoom: 8,
-       center: {lat: 40.72, lng: -73.96}
-     });
-     var geocoder = new google.maps.Geocoder;
-     var infowindow = new google.maps.InfoWindow;
-
-     document.getElementById('submit').addEventListener('click', function() {
-       geocodePlaceId(geocoder, map, infowindow);
-     });
-   }
+const createMap = function(tempPlaceId) {
 
    // This function is called when the user clicks the UI button requesting
    // a reverse geocode.
-   function geocodePlaceId(geocoder, map, infowindow) {
-     var placeId = document.getElementById('place-id').value;
+   function geocodePlaceId(tempPlaceId, geocoder, map, infowindow) {
+     let placeId = tempPlaceId;
+     console.log('geo');
      geocoder.geocode({'placeId': placeId}, function(results, status) {
        if (status === 'OK') {
          if (results[0]) {
            map.setZoom(11);
            map.setCenter(results[0].geometry.location);
-           var marker = new google.maps.Marker({
+           let marker = new google.maps.Marker({
              map: map,
              position: results[0].geometry.location
            });
@@ -40,7 +28,18 @@ const createMap = function() {
        }
      });
    }
-}
+   // Initialize the map.
+   function initMap() {
+      let map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: {lat: 40.72, lng: -73.96}
+      });
+      let geocoder = new google.maps.Geocoder;
+      let infowindow = new google.maps.InfoWindow;
+      geocodePlaceId(geocoder, map, infowindow);
+    }
+    initMap();
+};
 
 module.exports = {
   createMap,

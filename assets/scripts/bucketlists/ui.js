@@ -1,6 +1,7 @@
 'use strict';
 
 const store = require('../store');
+const createMaps = require('../maps/create-map');
 
 // handlebars
 const displayBucketlistTemplate = require('../templates/bucketlist.handlebars');
@@ -45,6 +46,7 @@ const showBucketlistSuccess = (data) => {
   let showBucketlistHtml = showBucketlistTemplate({ bucketlist: data.bucketlist });
   $('.content').empty().append(showBucketlistHtml);
   $('.log').text('');
+  createMaps.createMap(store.mapPlaceId);
 };
 
 const showBucketlistFailure = (data) => {
