@@ -39,8 +39,9 @@ $(document).ready(function() {
   function fillInAddress() {
     // Get the place details from the autocomplete object.
     let place = autocomplete.getPlace();
-    console.log('place');
-    console.log(place);
+    let storedPlaceId = place.place_id;
+    $(".copied-place-id").val(storedPlaceId);
+
     document.getElementById("latitude").value = place.geometry.location.lat();
     document.getElementById("longitude").value = place.geometry.location.lng();
 
@@ -59,8 +60,6 @@ $(document).ready(function() {
       }
     }
     let copyText = $("#autocomplete").val();
-    console.log("copyText");
-    console.log(copyText);
     $(".copied-autocomplete").val(copyText);
   }
   // [END region_fillform]

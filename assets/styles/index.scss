@@ -1,6 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+// Hides Default Address Table
+#address {
+  display: none;
+}
+
 #map {
   height: 100%;
 }
