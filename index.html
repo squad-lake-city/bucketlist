@@ -19,37 +19,86 @@
 <body class="container-fluid">
   <h1>Bucketlist</h1>
 
-  <form id="sign-up" class="hide-sign-up">
-    <fieldset>
-      <legend>Sign up!</legend>
-      <input type="text" name="credentials[email]" value="" placeholder="email">
-      <input type="password" name="credentials[password]" value="" placeholder="password">
-      <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
-      <input type="submit" name="submit" value="Sign up!">
-    </fieldset>
-  </form>
-  <form id="sign-in" class="hide-sign-in">
-    <fieldset>
-      <legend>Sign in!</legend>
-      <input type="text" name="credentials[email]" value="" placeholder="email">
-      <input type="password" name="credentials[password]" value="" placeholder="password">
-      <input type="submit" name="submit" value="Sign in!">
-    </fieldset>
-  </form>
-  <form id="sign-out" class="hide-sign-out">
-    <fieldset>
-      <legend>Sign out!</legend>
-      <input type="submit" name="submit" value="Sign out!">
-    </fieldset>
-  </form>
-  <form id="change-password" class="hide-change-pw">
-    <fieldset>
-      <legend>Change Password</legend>
-      <input type="password" name="passwords[old]" value="" placeholder="Old Password">
-      <input type="password" name="passwords[new]" value="" placeholder="New Password">
-      <input type="submit" name="submit" value="Change Password">
-    </fieldset>
-  </form>
+  <div class="btn-group" id="sign-up">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sign Up
+    </button>
+    <div class="dropdown-menu">
+      <form class="auth">
+        <p class="signup-failure"></p>
+        <fieldset>
+          <label class="email">
+                Email
+                <input type="email" name="credentials[email]" class="signup-email">
+          </label>
+
+          <label class="password">
+                Password
+                <input id="password" type="password" name="credentials[password]" class="signup-password">
+          </label>
+
+          <label class="password_confirmation">
+                Password Confirmation
+                <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="signup-password">
+          </label>
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="btn-group" id="sign-in">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sign In
+    </button>
+    <div class="dropdown-menu">
+      <form class="auth">
+        <p class="signin-failure"></p>
+        <fieldset>
+          <label class="email">
+              Email
+            <input type="email" name="credentials[email]" class="signin-email">
+          </label>
+
+          <label class="password">
+              Password
+            <input type="password" name="credentials[password]" class="signin-password">
+          </label>
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <div class="btn-group" role="group" aria-label="...">
+    <form id="sign-out">
+      <fieldset>
+        <button type="submit" class="btn btn-danger">Sign Out</button>
+      </fieldset>
+    </form>
+  </div>
+  <div class="btn-group" id="change-password">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Change Password
+    </button>
+    <div class="dropdown-menu changepw-dropdown">
+      <form>
+        <p class="changepw-failure"></p>
+        <fieldset>
+          <label class="old">
+                Old password
+                <input type="password" name="passwords[old]" class="old-password">
+          </label>
+
+          <label class="new">
+                New password
+                <input type="password" name="passwords[new]" class="new-password">
+          </label>
+
+          <input type="submit" name="submit" value="Change password!">
+        </fieldset>
+      </form>
+    </div>
+  </div>
 
   <form class="item" id="index-bl-item">
     <fieldset>
@@ -69,15 +118,6 @@
     </fieldset>
   </form>
 
-  <form class="item" id="show-bl-item">
-    <fieldset>
-      <legend>Show Buckelist Item</legend>
-      <div class="form-group">
-        <input class='form-clear' id="show-bl-item-id" type="text" name="bucketlist[id]" placeholder="Bucketlist Item ID">
-        <button type="submit" class="btn btn-default">Show Bucketlist Item</button>
-      </div>
-    </fieldset>
-  </form>
 
   <form class="item" id="create-bl-item">
     <fieldset>
