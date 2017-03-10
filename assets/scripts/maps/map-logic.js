@@ -58,6 +58,10 @@ $(document).ready(function() {
         document.getElementById(addressType).value = val;
       }
     }
+    let copyText = $("#autocomplete").val();
+    console.log("copyText");
+    console.log(copyText);
+    $(".copied-autocomplete").val(copyText);
   }
   // [END region_fillform]
 
