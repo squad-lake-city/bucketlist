@@ -20,8 +20,9 @@ const onHideBucketlist= (event) => {
 };
 
 const onShowBucketlist = function(event) {
+  let id = event.target.dataset.id;
   event.preventDefault();
-  api.showBucketlist()
+  api.showBucketlist(id)
     .done(ui.showBucketlistSuccess)
     .fail(ui.showBucketlistFailure);
 };
@@ -40,9 +41,11 @@ const onCreateBucketlist = function(event) {
 };
 
 const onDeleteBucketlist = function(event) {
+
+  let id = event.target.dataset.id;
   event.preventDefault();
-  let data = getFormFields(event.target);
-  api.deleteBucketlist(data)
+  // let data = getFormFields(event.target);
+  api.deleteBucketlist(id)
     .done(ui.deleteBucketlistSuccess)
     .fail(ui.deleteBucketlistFailure);
 };
@@ -50,7 +53,8 @@ const onDeleteBucketlist = function(event) {
 const onUpdateBucketlist = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  api.updateBucketlist(data)
+  let id = event.target.dataset.id;
+  api.updateBucketlist(data, id)
     .done(ui.updateBucketlistSuccess)
     .fail(ui.updateBucketlistFailure);
 };
@@ -60,7 +64,7 @@ const addHandlers = () => {
   $('#hide-index-bl-item').on('click', onHideBucketlist);
   $('#show-bl-item').on('submit', onShowBucketlist);
   $('#create-bl-item').on('submit', onCreateBucketlist);
-  $('#delete-bl-item').on('submit', onDeleteBucketlist);
+  $('.content').on('click','.remove-bucketlist-item', onDeleteBucketlist);
   $('#update-bl-item').on('submit', onUpdateBucketlist);
 };
 

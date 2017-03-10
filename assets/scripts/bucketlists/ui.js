@@ -12,15 +12,15 @@ const getBucketlistSuccess = function (data) {
     $('.log').text("You have " + data.bucketlists.length + " items on your bucketlist");
     // console.log(data);
     $('.log').show();
-    $('.log-two').empty().append(displayBucketlistsHtml);
+    $('.content').empty().append(displayBucketlistsHtml);
 } else {
-    $('.log-two').empty().append(displayBucketlistsHtml);
+    $('.content').empty().append(displayBucketlistsHtml);
     $('.log').val('');
   }
 };
 
 const hideBucketlist = () => {
-    $('.log-two').empty();
+    $('.content').empty();
     $('.log').hide();
   };
 

@@ -15,10 +15,9 @@ const getBucketlist = function() {
   });
 };
 
-const showBucketlist = function() {
+const showBucketlist = function(id) {
   return $.ajax({
-    url: config.apiOrigin + '/bucketlists/' + document.getElementById("show-bl-item-id").value,
-    // url: config.apiOrigin + '/bucklists/' + store.
+    url: config.apiOrigin + '/bucketlists/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -37,9 +36,9 @@ const createBucketlist = function(data) {
   });
 };
 
-const deleteBucketlist = function() {
+const deleteBucketlist = function(id) {
   return $.ajax({
-    url: config.apiOrigin + '/bucketlists/' + document.getElementById("delete-bl-item-id").value,
+    url: config.apiOrigin + '/bucketlists/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -47,9 +46,9 @@ const deleteBucketlist = function() {
   });
 };
 
-const updateBucketlist = function(data) {
+const updateBucketlist = function(data, id) {
   return $.ajax({
-    url: config.apiOrigin + '/bucketlists/' + document.getElementById("update-bl-item-id").value,
+    url: config.apiOrigin + '/bucketlists/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token,
