@@ -8,7 +8,7 @@ const showBucketlistTemplate = require('../templates/show-bucketlist.handlebars'
 
 const getBucketlistSuccess = function (data) {
   let displayBucketlistsHtml = displayBucketlistTemplate({ bucketlists: data.bucketlists });
-    console.log('get bucketlist success');
+    // console.log('get bucketlist success');
   if (data.bucketlists.length >= 0){
     $('.log').text("You have " + data.bucketlists.length + " items on your bucketlist");
     // console.log(data);
@@ -34,10 +34,10 @@ const hideBucketlist = () => {
 //   console.log(data);
 // };
 
-const getBucketlistFailure = (data) => {
-  console.log('get bucketlist failure');
-  console.log(data);
-};
+// const getBucketlistFailure = (data) => {
+//   console.log('get bucketlist failure');
+//   console.log(data);
+// };
 
 const showBucketlistSuccess = (data) => {
   console.log('show bucketlist success');
@@ -62,14 +62,14 @@ const createBucketlistFailure = (data) => {
   console.log(data);
 };
 
-const deleteBucketlistSuccess = (data) => {
+const deleteBucketlistSuccess = () => {
   console.log('delete bucketlist success');
-  console.log(data);
+  // console.log(data);
+
 };
 
-const deleteBucketlistFailure = (error) => {
+const deleteBucketlistFailure = () => {
   console.log('delete bucketlist failure');
-  console.log(error);
 };
 
 const updateBucketlistSuccess = (data) => {
@@ -77,16 +77,16 @@ const updateBucketlistSuccess = (data) => {
   console.log(data);
 };
 
-const updateBucketlistFailure = (error) => {
+const updateBucketlistFailure = () => {
   console.log('update bucketlist failure');
-  console.log(error);
+  // console.log(error);
 };
 
 module.exports = {
   createBucketlistSuccess,
   createBucketlistFailure,
   getBucketlistSuccess,
-  getBucketlistFailure,
+  // getBucketlistFailure,
   hideBucketlist,
   showBucketlistSuccess,
   showBucketlistFailure,
