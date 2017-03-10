@@ -6,7 +6,6 @@
         <th>Location</th>
         <th>Activity</th>
         <th>Completed</th>
-        <th>Place ID</th>
         <th> VIEW </th>
         <th> DELETE </th>
         <th> EDIT </th>
@@ -18,24 +17,22 @@
         <td>{{bucketlist.location}}</td>
         <td>{{bucketlist.activity}}</td>
         <td>{{bucketlist.completed}}</td>
-        <td>{{bucketlist.placeId}}</td>
         <td><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="show-bucketlist btn btn-default">View</button></td>
         <td><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="remove-bucketlist-item glyphicon glyphicon-remove-sign"></button></td>
-          <td data-id="{{bucketlist._id}}" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-id="{{bucketlist._id}}" data-toggle="dropdown"> <b data-id="{{bucketlist._id}}" class="glyphicon glyphicon-edit"></b> </a>
-            <div class="dropdown-menu">
+        <td data-id="{{bucketlist._id}}" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-id="{{bucketlist._id}}" data-toggle="dropdown"> <b data-id="{{bucketlist._id}}" class="glyphicon glyphicon-edit"></b> </a>
+          <div class="dropdown-menu">
 
-              <form data-id="{{bucketlist._id}}" class="edit-bucketlist">
-                <div class="form-group">
-                  <input data-id="{{bucketlist._id}}" type="text" name="bucketlist[location]" value="{{bucketlist.location}}">
-                  <input data-id="{{bucketlist._id}}" type="text" name="bucketlist[activity]" value="{{bucketlist.activity}}">
-                  <input data-id="{{bucketlist._id}}" type="number" name="bucketlist[completed]" value="{{bucketlist.completed}}">
-                  <input data-id="{{bucketlist._id}}" type="text" name="bucketlist[placeId]" value="{{bucketlist.placeId}}">
-                  <button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="submit" name="button" class="edit-bucketlist glyphicon glyphicon-edit"></button>
-                </div>
-              </form>
-            </div>
-          </td>
+            <form data-id="{{bucketlist._id}}" class="edit-bucketlist">
+              <div class="form-group">
+                <p data-id="{{bucketlist._id}}" type="text" name="bucketlist[location]" value="{{bucketlist.location}}">{{bucketlist.location}}</p>
+                <input data-id="{{bucketlist._id}}" type="text" name="bucketlist[activity]" value="{{bucketlist.activity}}">
+                <input data-id="{{bucketlist._id}}" type="number" name="bucketlist[completed]" value="{{bucketlist.completed}}">
+                <button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="submit" name="button" class="edit-bucketlist glyphicon glyphicon-edit"></button>
+              </div>
+            </form>
+          </div>
+        </td>
     </tr>
     </tbody>
   </table>

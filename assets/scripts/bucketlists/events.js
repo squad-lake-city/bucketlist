@@ -71,6 +71,7 @@ const addHandlers = () => {
     onDeleteBucketlist(event);
     $(this).parent().parent().parent().parent().hide();
   });
+  $('.content').on('submit', '.edit-bucketlist', onUpdateBucketlist);
 };
 
 module.exports = {
