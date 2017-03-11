@@ -60,6 +60,13 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
+  $('#sign-out').hide();
+  $('#change-password').hide();
+  $('#sign-in').show();
+  $('#sign-up').show();
+  $('#create-bl-item').hide();
+  $('#hide-index-bl-item').hide();
+  $('#index-bl-item').hide();
 };
 
 module.exports = {

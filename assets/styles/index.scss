@@ -27,7 +27,18 @@ html {
 
 .success {
   color: $green;
+}
 
+.log-fail {
+  color: $red;
+}
+
+.log {
+  color: $green;
+}
+
+.number {
+  color: $green;
 }
 
 thead {
