@@ -15,6 +15,7 @@ const getBucketlistSuccess = function (data) {
     // console.log(data);
     $('.number').show();
     $('.content').empty().append(displayBucketlistsHtml);
+    $('#map').hide();
 } else {
     $('.content').empty().append(displayBucketlistsHtml);
     $('.number').val('');
@@ -24,6 +25,7 @@ const getBucketlistSuccess = function (data) {
 const hideBucketlist = () => {
     $('.content').empty();
     $('.number').hide();
+    $('#map').hide();
   };
 
 
@@ -46,6 +48,7 @@ const showBucketlistSuccess = (data) => {
   let showBucketlistHtml = showBucketlistTemplate({ bucketlist: data.bucketlist });
   $('.content').empty().append(showBucketlistHtml);
   $('.number').text('');
+  $('#map').show();
   createMaps.createMap(store.mapPlaceId);
 };
 
@@ -74,6 +77,7 @@ const deleteBucketlistSuccess = () => {
   // console.log(data);
   $('.log').text('Delete success!').delay(1000).hide(2000);
   $('.log').show();
+  $('#map').hide();
 
 };
 

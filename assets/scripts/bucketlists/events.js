@@ -82,6 +82,7 @@ const addHandlers = () => {
   $('#create-bl-item').on('submit', onCreateBucketlist);
   $('.content').on('click', '.remove-bucketlist-item', onDeleteBucketlist);
   $('.content').on('submit', '.edit-bucketlist', onUpdateBucketlist);
+  $('#map').hide();
 };
 
 module.exports = {

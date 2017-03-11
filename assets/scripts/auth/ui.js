@@ -13,6 +13,7 @@ const signInSuccess = function() {
   $('#create-bl-item').show();
   $('#index-bl-item').show();
   $('#hide-index-bl-item').show();
+  $('#map').show();
 };
 
 
@@ -60,6 +61,7 @@ const signOutSuccess = function() {
   $('#create-bl-item').hide();
   $('#index-bl-item').hide();
   $('#hide-index-bl-item').hide();
+  $('#map').hide();
 };
 
 const signOutFailure = function() {

@@ -67,6 +67,7 @@ const addHandlers = () => {
   $('#create-bl-item').hide();
   $('#hide-index-bl-item').hide();
   $('#index-bl-item').hide();
+
 };
 
 module.exports = {
