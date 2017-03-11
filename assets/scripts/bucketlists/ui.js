@@ -59,6 +59,7 @@ const createBucketlistSuccess = (data) => {
   console.log(data);
   $('.create-success').text('Item created!').delay(1000).hide(2000);
   $('.create-success').show();
+  // $('.form-clear').val('');
 };
 
 const createBucketlistFailure = (data) => {

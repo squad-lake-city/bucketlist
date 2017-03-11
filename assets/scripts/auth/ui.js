@@ -26,6 +26,7 @@ const signUpSuccess = function() {
   console.log("sign-up success");
   $('.signup-success').text('Signed up!').delay(1000).hide(2000);
   $('.signup-success').show();
+  $('.form-clear').val('');
 };
 
 const signUpFailure = function() {
@@ -38,6 +39,7 @@ const changePasswordSuccess = function() {
   console.log("change-password success");
   $('.changepw-success').text('Successfully changed your password').delay(1000).hide(2000);
   $('.changepw-success').show();
+  $('.form-clear').val('');
 };
 
 const changePasswordFailure = function() {

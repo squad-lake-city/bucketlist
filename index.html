@@ -30,17 +30,17 @@
         <fieldset>
           <label class="email">
                 Email
-                <input type="email" name="credentials[email]" class="signup-email">
+                <input type="email" name="credentials[email]" class="form-clear signup-email">
           </label>
 
           <label class="password">
                 Password
-                <input id="password" type="password" name="credentials[password]" class="signup-password">
+                <input id="password" type="password" name="credentials[password]" class="form-clear signup-password">
           </label>
 
           <label class="password_confirmation">
                 Password Confirmation
-                <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="signup-password">
+                <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="form-clear signup-password">
           </label>
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
@@ -59,12 +59,12 @@
         <fieldset>
           <label class="email">
               Email
-            <input type="email" name="credentials[email]" class="signin-email">
+            <input type="email" name="credentials[email]" class="form-clear signin-email">
           </label>
 
           <label class="password">
               Password
-            <input type="password" name="credentials[password]" class="signin-password">
+            <input type="password" name="credentials[password]" class="form-clear signin-password">
           </label>
           <input type="submit" name="submit" value="Sign in!">
         </fieldset>
@@ -126,7 +126,7 @@
   </form>
 
 
-  <form class="item" id="create-bl-item">
+  <form class="item" id= "create-bl-item">
     <fieldset>
       <legend>Create Item</legend>
       <p class="failure create-failure"></p>
@@ -140,11 +140,11 @@
         <input class='copied-place-id form-clear' name="bucketlist[placeId]" placeholder="hidden-place_id" type="hidden">
         <br>
         <p class="form-field-desc">Activity</p>
-        <input class='form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
+        <input class='create-form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
         <br><br>
         <p class="form-field-desc">Activity Completed? Please check the box if activity completed</p>
-        <input class="form-clear" name="bucketlist[completed]" type="hidden" value="0">
-        <input class="form-clear" name="bucketlist[completed]" placeholder="Completed?" type="checkbox" value="1">
+        <input class="create-form-clear" name="bucketlist[completed]" type="hidden" value="0">
+        <input class="create-form-clear" name="bucketlist[completed]" placeholder="Completed?" type="checkbox" value="1">
         <br><br>
         <button type="submit" class="btn btn-default">Create Bucketlist Item</button>
       </div>
