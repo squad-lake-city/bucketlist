@@ -54,10 +54,8 @@ $(document).ready(function() {
     let place = autocomplete.getPlace();
     let storedPlaceId = place.place_id;
     $(".copied-place-id").val(storedPlaceId);
-    console.log(place);
 
     longitude = parseFloat(place.geometry.location.lat());
-    console.log(longitude);
     latitude = parseFloat(place.geometry.location.lng());
     document.getElementById("latitude").value = place.geometry.location.lat();
     document.getElementById("longitude").value = place.geometry.location.lng();

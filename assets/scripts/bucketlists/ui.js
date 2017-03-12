@@ -11,31 +11,9 @@ const getBucketlistSuccess = function(data) {
   let displayBucketlistsHtml = displayBucketlistTemplate({
     bucketlists: data.bucketlists
   });
-
-
-  // Steve's Work Start Here
-  console.log('print sample return value for data');
-  console.log(data);
-
-  const returnData = data.bucketlists;
-
-  for (let i = 0; i < returnData.length; i ++ ) {
-    let itemCompletedNum = returnData[i].completed;
-    if (itemCompletedNum === 1) {
-      // where i would want to input handlebars for yes
-      console.log("yes");
-    } else {
-      // where i woudl want to input handlebars for no
-      console.log("no")
-    }
-  }
-
-
-  // Steve Work End Here
-
+  $('#create-bl-item').show();
   if (data.bucketlists.length >= 0) {
     $('.number').text("You have " + data.bucketlists.length + " items on your bucketlist").delay(1000).hide(2000);
-    // console.log(data);
     $('.number').show();
     $('.content').empty().append(displayBucketlistsHtml);
     $('#map').hide();
@@ -59,53 +37,38 @@ const showBucketlistSuccess = (data) => {
   $('.number').text('');
   $('#map').show();
   createMaps.createMap(store.mapPlaceId);
+  $('#create-bl-item').hide();
 };
 
-const showBucketlistFailure = (data) => {
-  console.log('show bucketlist failure');
-  console.log(data);
-};
-
-const createBucketlistSuccess = (data) => {
-  console.log('create bucketlist success');
-  console.log(data);
+const createBucketlistSuccess = () => {
   $('.create-success').text('Item created!').delay(1000).hide(2000);
   $('.create-success').show();
   $('#map').hide();
   $('.form-clear').val('');
 };
 
-const createBucketlistFailure = (data) => {
-  console.log('create bucketlist failure');
-  console.log(data);
+const createBucketlistFailure = () => {
   $('.create-failure').text('Item not created. Make sure all forms are filled out').delay(1000).hide(2000);
   $('.create-failure').show();
 };
 
 const deleteBucketlistSuccess = () => {
-  console.log('delete bucketlist success');
-  // console.log(data);
   $('.log').text('Delete success!').delay(1000).hide(2000);
   $('.log').show();
   $('#map').hide();
 };
 
 const deleteBucketlistFailure = () => {
-  console.log('delete bucketlist failure');
   $('.log-fail').text('Item not deleted').delay(1000).hide(2000);
   $('.log-fail').show();
 };
 
-const updateBucketlistSuccess = (data) => {
-  console.log('update bucketlist success');
-  console.log(data);
+const updateBucketlistSuccess = () => {
   $('.log').text('Update success!').delay(1000).hide(2000);
   $('.log').show();
 };
 
 const updateBucketlistFailure = () => {
-  console.log('update bucketlist failure');
-  // console.log(error);
   $('.log-fail').text('Update failed, please make sure all the fields are filled out').delay(1000).hide(2000);
   $('.log-fail').show();
 };
@@ -117,7 +80,7 @@ module.exports = {
   // getBucketlistFailure,
   hideBucketlist,
   showBucketlistSuccess,
-  showBucketlistFailure,
+  // showBucketlistFailure,
   updateBucketlistSuccess,
   updateBucketlistFailure,
   deleteBucketlistSuccess,

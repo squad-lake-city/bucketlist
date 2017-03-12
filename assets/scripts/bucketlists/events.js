@@ -31,20 +31,15 @@ const onCreateBucketlist = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createBucketlist(data)
-    // .then((response) => {
-    //   console.log(response);
-    //   console.log(response.bucketlist._id);
-    // })
     .then(ui.createBucketlistSuccess)
+    .catch(ui.createBucketlistFailure)
     .then(onGetBucketlist);
-  // .catch(ui.createBucketlistFailure);
   onGetBucketlist(event);
 };
 
 const onDeleteBucketlist = function(event) {
   event.preventDefault();
   let id = event.target.dataset.id;
-  // let data = getFormFields(event.target);
   api.deleteBucketlist(id)
     .then(() => {
       $('.content').empty();
@@ -53,7 +48,6 @@ const onDeleteBucketlist = function(event) {
         .catch(ui.getBucketlistFailure);
     }).then(ui.deleteBucketlistSuccess)
     .catch(ui.deleteBucketlistFailure);
-  // .catch(ui.deleteBucketlistFailure);
 
 
 };

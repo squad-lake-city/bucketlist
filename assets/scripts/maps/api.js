@@ -82,13 +82,6 @@ const getMapResults = function() {
         jsonpCallback: 'jsonCallback',
         contentType: "application/json",
         dataType: 'jsonp',
-        success: function (json) {
-            console.dir(json.sites);
-        },
-        error: function (e) {
-            console.log(e.message);
-
-        }
     });
   });
 };

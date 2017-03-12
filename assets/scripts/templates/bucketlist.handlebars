@@ -33,7 +33,7 @@
               <div class="form-group">
                 <p data-id="{{bucketlist._id}}" type="text" name="bucketlist[location]" value="{{bucketlist.location}}">{{bucketlist.location}}</p>
                 <input data-id="{{bucketlist._id}}" type="text" name="bucketlist[activity]" value="{{bucketlist.activity}}">
-                <input data-id="{{bucketlist._id}}" type="text" name="bucketlist[completed]" value="{{bucketlist.completed}}">
+                <input data-id="{{bucketlist._id}}" type="boolean" name="bucketlist[completed]" value="{{bucketlist.completed}}">
                 <button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="submit" name="button" class="edit-bucketlist glyphicon glyphicon-edit"></button>
               </div>
             </form>

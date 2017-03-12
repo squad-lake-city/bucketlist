@@ -1,7 +1,7 @@
 'use strict';
 
 const api = require('./api');
-const ui = require('./ui');
+// const ui = require('./ui');
 // const getFormFields = require('../../../lib/get-form-fields');
 // const store = require('../store');
 
@@ -10,8 +10,9 @@ const ui = require('./ui');
 const onGetMapResults = function(event) {
   event.preventDefault();
   api.getMapResults()
-    .done(ui.getMapResultsSuccess)
-    .fail(ui.getMapResultsFailure);
+    // .done(ui.getMapResultsSuccess)
+    // .fail(ui.getMapResultsFailure)
+    ;
 };
 
 const addHandlers = () => {

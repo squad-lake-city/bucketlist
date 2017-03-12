@@ -29,7 +29,6 @@ const createMap = function(tempPlaceId) {
              map: map,
              position: results[0].geometry.location
            });
-           console.log(results[0].formatted_address);
 
            let address = results[0].formatted_address.toString();
            let activity = $(".view-activity").text();
@@ -42,8 +41,6 @@ const createMap = function(tempPlaceId) {
               }
               tempactivity.push("...");
               activity = tempactivity.join(" ");
-              console.log('activity print0ut');
-              console.log(activity);
            }
 
            let label = `<div class="map-label"><div id="activity-label">${activity}</div><div id="address-label">${address}</div></div>`;
