@@ -15,7 +15,13 @@
         <th scope="row" data-id="{{bucketlist._id}}"></th>
         <td>{{bucketlist.location}}</td>
         <td>{{bucketlist.activity}}</td>
-        <td>{{bucketlist.completed}}</td>
+        <td>
+          {{#if bucketlist.completed}}
+            Yes
+          {{else}}
+            No
+          {{/if}}
+        </td>
         <td><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="remove-bucketlist-item glyphicon glyphicon-remove-sign"></button></td>
         <td data-id="{{bucketlist._id}}" class="dropdown">
           <a href="#" class="dropdown-toggle" data-id="{{bucketlist._id}}" data-toggle="dropdown"> <b data-id="{{bucketlist._id}}" class="glyphicon glyphicon-edit"></b> </a>
