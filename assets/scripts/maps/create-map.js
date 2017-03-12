@@ -33,8 +33,20 @@ const createMap = function(tempPlaceId) {
 
            let address = results[0].formatted_address.toString();
            let activity = $(".view-activity").text();
-           let label = `${activity}: ${address}`;
-           label = `<div class="map-label"><div id="activity-label">${activity}</div><div id="address-label">${address}</div></div>`;
+
+           let activityArray = activity.split(" ");
+           if (activityArray.length > 3) {
+              let tempactivity = [];
+              for ( let i = 0; i <3 ; i ++ ) {
+                tempactivity.push(activityArray[i]);
+              }
+              tempactivity.push("...");
+              activity = tempactivity.join(" ");
+              console.log('activity print0ut');
+              console.log(activity);
+           }
+
+           let label = `<div class="map-label"><div id="activity-label">${activity}</div><div id="address-label">${address}</div></div>`;
           //  label = '<div class="test-div">MyTest</div>'
            infowindow.setContent(label);
            infowindow.open(map, marker);
