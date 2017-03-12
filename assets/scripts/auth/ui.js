@@ -26,11 +26,14 @@ const signInFailure = function() {
 
 const signUpSuccess = function() {
   console.log("sign-up success");
+  let transferEmail = $("#sign-up .signup-email").val();
+  console.log(transferEmail);
   $("#sign-in").addClass("open");
   $('.signup-success').text('Signed up!').delay(1000).hide(2000);
   $('.signup-success').show();
   $('#sign-up').hide();
   $('.form-clear').val('');
+  $("#sign-in .signin-email").val(transferEmail);
 };
 
 const signUpFailure = function() {
