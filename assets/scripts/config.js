@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'hhttps://bucketlist-backend.herokuapp.com',
+    production: 'https://bucketlist-backend.herokuapp.com',
   },
 };
 
