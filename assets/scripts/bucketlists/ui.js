@@ -11,6 +11,28 @@ const getBucketlistSuccess = function(data) {
   let displayBucketlistsHtml = displayBucketlistTemplate({
     bucketlists: data.bucketlists
   });
+
+
+  // Steve's Work Start Here
+  console.log('print sample return value for data');
+  console.log(data);
+
+  const returnData = data.bucketlists;
+
+  for (let i = 0; i < returnData.length; i ++ ) {
+    let itemCompletedNum = returnData[i].completed;
+    if (itemCompletedNum === 1) {
+      // where i would want to input handlebars for yes
+      console.log("yes");
+    } else {
+      // where i woudl want to input handlebars for no
+      console.log("no")
+    }
+  }
+
+
+  // Steve Work End Here
+
   if (data.bucketlists.length >= 0) {
     $('.number').text("You have " + data.bucketlists.length + " items on your bucketlist").delay(1000).hide(2000);
     // console.log(data);
