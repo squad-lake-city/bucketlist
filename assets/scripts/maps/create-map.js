@@ -29,7 +29,14 @@ const createMap = function(tempPlaceId) {
              map: map,
              position: results[0].geometry.location
            });
-           infowindow.setContent(results[0].formatted_address);
+           console.log(results[0].formatted_address);
+
+           let address = results[0].formatted_address.toString();
+           let activity = $(".view-activity").text();
+           let label = `${activity}: ${address}`;
+           label = `<div class="map-label"><div id="activity-label">${activity}</div><div id="address-label">${address}</div></div>`;
+          //  label = '<div class="test-div">MyTest</div>'
+           infowindow.setContent(label);
            infowindow.open(map, marker);
          } else {
            window.alert('No results found');

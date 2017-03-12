@@ -155,3 +155,18 @@ td {
 #target {
   width: 345px;
 }
+
+// Map Labels
+
+// .map-label {
+//   margin: 0 auto;
+//   text-align: center;
+// }
+
+#activity-label {
+  color: red;
+  font-size: 15px;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: underline;
+}

@@ -1,5 +1,5 @@
 <div data-id="{{bucketlist._id}}">
-  <table class="table table-hover">
+  <table class="table table-hover view-table">
     <thead>
       <tr>
         <th></th>
@@ -14,7 +14,7 @@
       <tbody>
         <th scope="row" data-id="{{bucketlist._id}}"></th>
         <td>{{bucketlist.location}}</td>
-        <td>{{bucketlist.activity}}</td>
+        <td class="view-activity">{{bucketlist.activity}}</td>
         <td>
           {{#if bucketlist.completed}}
             Yes
