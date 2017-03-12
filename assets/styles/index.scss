@@ -1,16 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
-
 $black: #000;
 $red: #f00;
 $green: #008000;
 $blue: #00f;
 $sky-blue: #87ceeb;
 $white: #fff;
-$light-green: #90ee90;
+$light-green: #90ee90; // Hides Default Address Table
 
-// Hides Default Address Table
 #address {
   display: none;
 }
@@ -35,6 +32,18 @@ html {
   background: $sky-blue;
   border: 2px solid $black;
   color: $red;
+}
+
+.dropdown-menu {
+  background: $sky-blue;
+
+  .auth {
+    background: $sky-blue;
+
+    input {
+      background: $sky-blue;
+    }
+  }
 }
 
 .sign-out {

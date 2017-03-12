@@ -26,7 +26,7 @@
     <div class="dropdown-menu">
       <form class="auth">
         <p class="failure signup-failure"></p>
-        <p class="success singup-success"></p>
+        <p class="success signup-success"></p>
         <fieldset>
           <label class="email">
                 Email
@@ -42,7 +42,7 @@
                 Password Confirmation
                 <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="form-clear signup-password">
           </label>
-          <input type="submit" name="submit" value="Sign up!">
+          <button type="submit" class="btn btn-default">Sign Up</button>
         </fieldset>
       </form>
     </div>
@@ -66,7 +66,7 @@
               Password
             <input type="password" name="credentials[password]" class="form-clear signin-password">
           </label>
-          <input type="submit" name="submit" value="Sign in!">
+          <button type="submit" class="btn btn-default">Sign In</button>
         </fieldset>
       </form>
     </div>
@@ -76,7 +76,7 @@
       Change Password
     </button>
     <div class="dropdown-menu changepw-dropdown">
-      <form>
+      <form class="auth">
         <p class="failure changepw-failure"></p>
         <p class="success changepw-success"></p>
         <fieldset>
@@ -90,7 +90,7 @@
                 <input type="password" name="passwords[new]" class="form-clear new-password">
           </label>
 
-          <input type="submit" name="submit" value="Change password!">
+          <button type="submit" class="btn btn-default">Change Password</button>
         </fieldset>
       </form>
     </div>
@@ -98,9 +98,7 @@
 
   <div class="btn-group sign-out" role="group" aria-label="...">
     <form id="sign-out">
-      <fieldset>
         <button type="submit" class="btn btn-danger">Sign Out</button>
-      </fieldset>
     </form>
     <p class="failure signout-failure"></p>
     <p class="success signout-success"></p>
@@ -108,19 +106,15 @@
 
 
   <form class="item" id="index-bl-item">
-    <fieldset>
       <div class="form-group">
         <button type="submit" class="btn btn-default">Show Bucketlist</button>
       </div>
-    </fieldset>
   </form>
 
   <form class="item" id="hide-index-bl-item">
-    <fieldset>
       <div class="form-group">
         <button type="submit" class="btn btn-default">Hide Bucketlist</button>
       </div>
-    </fieldset>
   </form>
 
 
