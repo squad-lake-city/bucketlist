@@ -14,7 +14,6 @@ $(() => {
 const auth = require('./auth/events');
 const bucklist = require('./bucketlists/events');
 const maps = require('./maps/events');
-const logic = require('./maps/map-logic');
 
 $(() => {
   auth.addHandlers();

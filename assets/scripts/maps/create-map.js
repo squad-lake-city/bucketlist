@@ -23,7 +23,7 @@ const createMap = function(tempPlaceId) {
      geocoder.geocode({'placeId': placeId}, function(results, status) {
        if (status === 'OK') {
          if (results[0]) {
-           map.setZoom(11);
+           map.setZoom(12);
            map.setCenter(results[0].geometry.location);
            let marker = new google.maps.Marker({
              map: map,

@@ -7,45 +7,32 @@ const createMaps = require('../maps/create-map');
 const displayBucketlistTemplate = require('../templates/bucketlist.handlebars');
 const showBucketlistTemplate = require('../templates/show-bucketlist.handlebars');
 
-const getBucketlistSuccess = function (data) {
-  let displayBucketlistsHtml = displayBucketlistTemplate({ bucketlists: data.bucketlists });
-    // console.log('get bucketlist success');
-  if (data.bucketlists.length >= 0){
-    $('.number').text("You have " + data.bucketlists.length + " items on your bucketlist");
+const getBucketlistSuccess = function(data) {
+  let displayBucketlistsHtml = displayBucketlistTemplate({
+    bucketlists: data.bucketlists
+  });
+  if (data.bucketlists.length >= 0) {
+    $('.number').text("You have " + data.bucketlists.length + " items on your bucketlist").delay(1000).hide(2000);
     // console.log(data);
     $('.number').show();
     $('.content').empty().append(displayBucketlistsHtml);
     $('#map').hide();
-} else {
+  } else {
     $('.content').empty().append(displayBucketlistsHtml);
     $('.number').val('');
   }
 };
 
 const hideBucketlist = () => {
-    $('.content').empty();
-    $('.number').hide();
-    $('#map').hide();
-  };
-
-
-
-// Bucketlist UI
-
-// const getBucketlistSuccess = (data) => {
-//   console.log('get bucketlist success');
-//   console.log(data);
-// };
-
-// const getBucketlistFailure = (data) => {
-//   console.log('get bucketlist failure');
-//   console.log(data);
-// };
+  $('.content').empty();
+  $('.number').hide();
+  $('#map').hide();
+};
 
 const showBucketlistSuccess = (data) => {
-  console.log('show bucketlist success');
-  console.log(data);
-  let showBucketlistHtml = showBucketlistTemplate({ bucketlist: data.bucketlist });
+  let showBucketlistHtml = showBucketlistTemplate({
+    bucketlist: data.bucketlist
+  });
   $('.content').empty().append(showBucketlistHtml);
   $('.number').text('');
   $('#map').show();
@@ -62,7 +49,8 @@ const createBucketlistSuccess = (data) => {
   console.log(data);
   $('.create-success').text('Item created!').delay(1000).hide(2000);
   $('.create-success').show();
-  // $('.form-clear').val('');
+  $('#map').hide();
+  $('.form-clear').val('');
 };
 
 const createBucketlistFailure = (data) => {
@@ -78,7 +66,6 @@ const deleteBucketlistSuccess = () => {
   $('.log').text('Delete success!').delay(1000).hide(2000);
   $('.log').show();
   $('#map').hide();
-
 };
 
 const deleteBucketlistFailure = () => {

@@ -56,10 +56,6 @@ const onSignOut = function (event) {
 };
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp);
-  $('#sign-in').on('submit', onSignIn);
-  $('#change-password').on('submit', onChangePassword);
-  $('#sign-out').on('submit', onSignOut);
   $('#sign-out').hide();
   $('#change-password').hide();
   $('#sign-in').show();
@@ -67,7 +63,11 @@ const addHandlers = () => {
   $('#create-bl-item').hide();
   $('#hide-index-bl-item').hide();
   $('#index-bl-item').hide();
-
+  $('#map').hide();
+  $('#sign-up').on('submit', onSignUp);
+  $('#sign-in').on('submit', onSignIn);
+  $('#change-password').on('submit', onChangePassword);
+  $('#sign-out').on('submit', onSignOut);
 };
 
 module.exports = {

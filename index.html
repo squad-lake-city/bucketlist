@@ -54,7 +54,7 @@
     </button>
     <div class="dropdown-menu">
       <form class="auth">
-        <p class="failure signin-failure" ></p>
+        <p class="failure signin-failure"></p>
         <p class="success signin-success"></p>
         <fieldset>
           <label class="email">
@@ -82,12 +82,12 @@
         <fieldset>
           <label class="old">
                 Old password
-                <input type="password" name="passwords[old]" class="old-password">
+                <input type="password" name="passwords[old]" class="form-clear old-password">
           </label>
 
           <label class="new">
                 New password
-                <input type="password" name="passwords[new]" class="new-password">
+                <input type="password" name="passwords[new]" class="form-clear new-password">
           </label>
 
           <input type="submit" name="submit" value="Change password!">
@@ -96,7 +96,7 @@
     </div>
   </div>
 
-  <div class="btn-group" role="group" aria-label="...">
+  <div class="btn-group sign-out" role="group" aria-label="...">
     <form id="sign-out">
       <fieldset>
         <button type="submit" class="btn btn-danger">Sign Out</button>
@@ -109,7 +109,6 @@
 
   <form class="item" id="index-bl-item">
     <fieldset>
-      <legend>Index Bucketlist</legend>
       <div class="form-group">
         <button type="submit" class="btn btn-default">Show Bucketlist</button>
       </div>
@@ -118,7 +117,6 @@
 
   <form class="item" id="hide-index-bl-item">
     <fieldset>
-      <legend>Hide Bucketlist Index</legend>
       <div class="form-group">
         <button type="submit" class="btn btn-default">Hide Bucketlist</button>
       </div>
@@ -126,29 +124,27 @@
   </form>
 
 
-  <form class="item" id= "create-bl-item">
-    <fieldset>
-      <legend>Create Item</legend>
-      <p class="failure create-failure"></p>
-      <p class="success create-success"></p>
-      <div class="form-group">
-        <div id="locationField">
-          <p class="form-field-desc">Location of Activity</p>
-          <input id="autocomplete" class="autocomplete" placeholder="Enter your address" type="text">
-        </div>
-        <input class="copied-autocomplete form-clear" name="bucketlist[location]" placeholder="hidden-location" type="hidden">
-        <input class='copied-place-id form-clear' name="bucketlist[placeId]" placeholder="hidden-place_id" type="hidden">
-        <br>
-        <p class="form-field-desc">Activity</p>
-        <input class='create-form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
-        <br><br>
-        <p class="form-field-desc">Activity Completed? Please check the box if activity completed</p>
-        <input class="create-form-clear" name="bucketlist[completed]" type="hidden" value="0">
-        <input class="create-form-clear" name="bucketlist[completed]" placeholder="Completed?" type="checkbox" value="1">
-        <br><br>
-        <button type="submit" class="btn btn-default">Create Bucketlist Item</button>
+  <form class="item" id="create-bl-item">
+    <p class="failure create-failure"></p>
+    <p class="success create-success"></p>
+    <div class="form-group">
+      <h3>Create Bucketlist</h3>
+      <div id="locationField">
+        <p class="form-field-desc">Location of Activity</p>
+        <input id="autocomplete" class="autocomplete form-clear" placeholder="Enter your address" type="text">
       </div>
-    </fieldset>
+      <input class="copied-autocomplete form-clear" name="bucketlist[location]" placeholder="hidden-location" type="hidden">
+      <input class='copied-place-id form-clear' name="bucketlist[placeId]" placeholder="hidden-place_id" type="hidden">
+      <br>
+      <p class="form-field-desc">Activity</p>
+      <input class='create-form-clear form-clear' type="text" name="bucketlist[activity]" placeholder="activity">
+      <br><br>
+      <p class="form-field-desc">Activity Completed? Please check the box if activity completed</p>
+      <input class="create-form-clear form-clear" name="bucketlist[completed]" type="hidden" value="0">
+      <input class="create-form-clear form-clear" name="bucketlist[completed]" placeholder="Completed?" type="checkbox" value="1">
+      <br><br>
+      <button type="submit" class="btn btn-default">Create Bucketlist Item</button>
+    </div>
   </form>
 
   <div class="log"></div>
@@ -203,7 +199,7 @@
     </tr>
   </table>
 
-<div id="map"></div>
+  <div id="map"></div>
 
 </body>
 

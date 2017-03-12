@@ -7,13 +7,13 @@ const signInSuccess = function() {
   $('#sign-out').show();
   $('.form-clear').val('');
   $('.content').show();
-  $('#sign-in').on('click').hide();
-  $('#change-password').on('click').show();
+  $('#sign-in').hide();
+  $('#sign-up').hide();
+  $('#change-password').show();
   $('#sign-out').show();
   $('#create-bl-item').show();
   $('#index-bl-item').show();
   $('#hide-index-bl-item').show();
-  $('#map').show();
 };
 
 
@@ -27,6 +27,7 @@ const signUpSuccess = function() {
   console.log("sign-up success");
   $('.signup-success').text('Signed up!').delay(1000).hide(2000);
   $('.signup-success').show();
+  $('#sign-up').hide();
   $('.form-clear').val('');
 };
 
@@ -53,15 +54,16 @@ const signOutSuccess = function() {
   console.log("sign-out success");
   $('.signout-success').text('signed out!').delay(1000).hide(2000);
   $('.signout-success').show();
-  $('#sign-up').on('click').show();
-  $('#sign-in').on('click').show();
-  $('#change-password').on('click').hide();
-  $('#sign-out').on('click').hide();
+  $('#sign-up').show();
+  $('#sign-in').show();
+  $('#change-password').hide();
+  $('#sign-out').hide();
   $('.content').hide();
   $('#create-bl-item').hide();
   $('#index-bl-item').hide();
   $('#hide-index-bl-item').hide();
   $('#map').hide();
+  $('.form-clear').val('');
 };
 
 const signOutFailure = function() {

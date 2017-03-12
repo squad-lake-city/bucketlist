@@ -2,8 +2,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 
+$black: #000;
 $red: #f00;
 $green: #008000;
+$blue: #00f;
+$sky-blue: #87ceeb;
+$white: #fff;
+$light-green: #90ee90;
 
 // Hides Default Address Table
 #address {
@@ -11,14 +16,29 @@ $green: #008000;
 }
 
 #map {
-  height: 100%;
+  border: 10px solid $blue;
+  border-radius: 10px;
+  height: 50%;
+  margin-left: 25%;
+  width: 50%;
 }
 
 body,
 html {
+  background: linear-gradient(to right, $sky-blue, $white, $light-green);
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.btn {
+  background: $sky-blue;
+  border: 2px solid $black;
+  color: $red;
+}
+
+.sign-out {
+  margin-top: 1%;
 }
 
 .failure {

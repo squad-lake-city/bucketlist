@@ -4,7 +4,6 @@ const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
-const createMaps = require('../maps/create-map');
 // Bucketlist EVENTS
 
 const onGetBucketlist = function(event) {
@@ -82,7 +81,6 @@ const addHandlers = () => {
   $('#create-bl-item').on('submit', onCreateBucketlist);
   $('.content').on('click', '.remove-bucketlist-item', onDeleteBucketlist);
   $('.content').on('submit', '.edit-bucketlist', onUpdateBucketlist);
-  $('#map').hide();
 };
 
 module.exports = {
