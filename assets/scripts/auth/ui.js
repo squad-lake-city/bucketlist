@@ -19,12 +19,14 @@ const signInSuccess = function() {
 
 const signInFailure = function() {
   console.log("sign-in failure");
+  $("#sign-in").addClass("open");
   $('.signin-failure').text('Failed sign-in attempt. User email may not exist and/or passwords may not match').delay(1000).hide(2000);
   $('.signin-failure').show();
 };
 
 const signUpSuccess = function() {
   console.log("sign-up success");
+  $("#sign-in").addClass("open");
   $('.signup-success').text('Signed up!').delay(1000).hide(2000);
   $('.signup-success').show();
   $('#sign-up').hide();
@@ -33,6 +35,7 @@ const signUpSuccess = function() {
 
 const signUpFailure = function() {
   console.log("sign-up failure");
+  $("#sign-up").addClass("open");
   $('.signup-failure').text('Failed sign-up. The user email you used may be taken and/or your passwords match').delay(1000).hide(2000);
   $('.signup-failure').show();
 };
