@@ -17,6 +17,9 @@ const createMap = function() {
     });
 }
 
+$(document).ready(function() {
+
+
 
 
   $("#autocomplete").on('focus', function() {
@@ -100,6 +103,6 @@ const createMap = function() {
 
   }
   initialize();
-
+});
 
 // [END region_geolocation]
