@@ -2,7 +2,7 @@
 
 const store = require('../store');
 
-const createMap = function(tempPlaceId) {
+const createMap = function(tempPlaceId, activityText) {
   let placeId = tempPlaceId;
 
   function initMap() {
@@ -20,7 +20,7 @@ const createMap = function(tempPlaceId) {
    // This function is called when the user clicks the UI button requesting
    // a reverse geocode.
    function geocodePlaceId(geocoder, map, infowindow) {
-     geocoder.geocode({'placeId': placeId}, function(results, status) {
+     geocoder.geocode({'placeId': store.mapPlaceId}, function(results, status) {
        if (status === 'OK') {
          if (results[0]) {
            map.setZoom(12);
@@ -29,11 +29,13 @@ const createMap = function(tempPlaceId) {
              map: map,
              position: results[0].geometry.location
            });
+           console.log(results[0].formatted_address);
 
            let address = results[0].formatted_address.toString();
-           let activity = $(".view-activity").text();
+           let activity = activityText;
 
            let activityArray = activity.split(" ");
+           console.log(activityArray);
            if (activityArray.length > 3) {
               let tempactivity = [];
               for ( let i = 0; i <3 ; i ++ ) {
@@ -41,10 +43,13 @@ const createMap = function(tempPlaceId) {
               }
               tempactivity.push("...");
               activity = tempactivity.join(" ");
+              // console.log('activity print0ut');
+              // console.log(activity);
            }
 
            let label = `<div class="map-label"><div id="activity-label">${activity}</div><div id="address-label">${address}</div></div>`;
           //  label = '<div class="test-div">MyTest</div>'
+          // console.log(label);
            infowindow.setContent(label);
            infowindow.open(map, marker);
          } else {
