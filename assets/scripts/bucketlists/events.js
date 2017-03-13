@@ -70,36 +70,48 @@ const onUpdateBucketlist = function(event) {
 };
 
 const onEditItem = function() {
-  let buttonParent = $(this).parent();
-  let id = $(this).attr("data-id");
+  // let buttonParent = $(this).parent();
+  // let id = $(this).attr("data-id");
   let activity = $(this).attr("data-activity");
-  let location = $(this).attr("data-location");
+  // let location = $(this).attr("data-location");
   let completed = $(this).attr("data-completed");
-  let placeId = $(this).attr("data-placeid");
+  // let placeId = $(this).attr("data-placeid");
   let currentActivityDiv = $(this).parent().parent().children(".bl-activity");
   let currentCompletedDiv = $(this).parent().parent().children(".bl-completed");
+  // let saveCompletedDivVal = $(this).parent().parent().children(".bl-completed").text();
 
- $(currentActivityDiv).text("");
- $(currentCompletedDiv).text("");
+  let saveCurrentCompleted = $(this).parent().parent().children(".bl-completed").text().trim();
+
+  $(currentActivityDiv).text("");
+  $(currentCompletedDiv).text("");
 
   currentActivityDiv.text("");
   currentCompletedDiv.text("");
 
-  let hiddenCheckHtml = $('<input name="bucketlist[completed]" type="hidden" value="false">');
-  let shownCheckHtml = $('<input class="checkbox-field" name="bucketlist[completed]" placeholder="Completed?" type="checkbox" value="true">');
+  // let hiddenCheckHtml = $('<input name="bucketlist[completed]" type="hidden" value="false">');
+  let shownCheckHtml = $('<input class="checkbox-field" name="bucketlist[completed]" placeholder="Completed?" type="checkbox">');
   let activityHtml = $('<input class="create-form-clear form-clear update-activity-table" type="text" name="bucketlist[activity]" placeholder="activity">');
-  let submitBtn = $('<button type="button" class="btn btn-default update-submission">Create Bucketlist Item</button>');
+  // let submitBtn = $('<button type="button" class="btn btn-default update-submission">Create Bucketlist Item</button>');
 
   $(currentActivityDiv).append(activityHtml);
-  $(currentCompletedDiv).append(hiddenCheckHtml);
+  // $(currentCompletedDiv).append(hiddenCheckHtml);
   $(currentCompletedDiv).append(shownCheckHtml);
 
   $(".update-activity-table").val(activity);
-  let buttonHTML = $(this).parent().html();
-  console.log(buttonHTML);
-  $(this).text("Submit Edit");
-  $(this).removeClass("glyphicon-edit");
-  $(this).addClass("submit-item-edit");
+
+console.log(saveCurrentCompleted);
+  // console.log(completed);
+  if (saveCurrentCompleted === "Yes") {
+    console.log('its here true');
+    $(this).parent().parent().children(".bl-completed").children('.checkbox-field').prop( "checked", true );
+  } else {
+    $(this).parent().parent().children(".bl-completed").children('.checkbox-field').prop( "checked", false );
+  }
+
+  let dummyButton = $('<button class="dummy-update-btn">Submit</button>');
+
+  $(this).hide();
+  $(this).parent().append(dummyButton);
 };
 
 const editBucketListItem = function(id, location, activity, placeId, completed) {
@@ -109,23 +121,43 @@ const editBucketListItem = function(id, location, activity, placeId, completed) 
     headers: {
       Authorization: 'Token token=' + store.user.token,
     },
-    data: `{
-      "location": ${location},
-      "activity": ${activity},
-      "placeId": ${placeId},
-      "completed": ${completed}
-    }`
+    data: {
+      "bucketlist": {
+        "activity": activity,
+        "completed": completed,
+        "location": location,
+        "placeId": placeId
+      }
+    }
   });
 };
 
 const onUpdatedSubmit = function(event) {
   event.preventDefault();
-  let id = $(this).attr("data-id");
-  let location = $(this).attr("location");
-  let activity = $(this).parent().parent().children(".bl-activity").val();
-  let completed = $(this).parent().parent().children(".bl-completed").val();
-  let placeid = $(this).attr("placeid");
-  editBucketListItem(id, location, activity, placeid, completed);
+
+  let submitButton = $(this).parent().children(".edit-bucketlist-item");
+
+  let activityVal = $(this).parent().parent().children(".bl-activity").children(".update-activity-table").val();
+
+  const isChecked = function() {
+    if ($('.checkbox-field').is(':checked') === true) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  let completed = isChecked();
+  let id = $(submitButton).attr("data-id");
+  let location = $(submitButton).attr("data-location");
+  let placeid = $(submitButton).attr("data-placeid");
+  // $(submitButton).attr("data-activity", activityVal);
+  // $(submitButton).attr("data-completed", completedVal);
+  console.log(completed);
+
+  editBucketListItem(id, location, activityVal, placeid, completed)
+    .done(ui.updateBucketlistItemSuccess)
+    .fail(ui.updateBucketlistItemFailure);
 };
 
 const addHandlers = () => {
@@ -136,7 +168,7 @@ const addHandlers = () => {
   $('.content').on('click', '.remove-bucketlist-item', onDeleteBucketlist);
   // $('.content').on('submit', '.edit-bucketlist', onUpdateBucketlist);
   $('.content').on('click', '.edit-bucketlist-item', onEditItem);
-  $('.content').on('click', '.submit-item-edit', onUpdatedSubmit);
+  $('.content').on('click', '.dummy-update-btn', onUpdatedSubmit);
 
 };
 
