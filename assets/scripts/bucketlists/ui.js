@@ -76,6 +76,7 @@ const updateBucketlistFailure = () => {
 const updateBucketlistItemSuccess = () => {
   $('.log').text('Update success!').delay(1000).hide(3000);
   $('.log').show();
+  $("#show-bucketlist-btn").click();
 };
 
 const updateBucketlistItemFailure = () => {
