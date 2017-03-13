@@ -9,6 +9,7 @@ module.exports = {
       application: './index.js',
       specs: './spec/_all.js',
       vendor: ['jquery', 'bootstrap-sass'],
+      maps: ['./assets/scripts/maps/maps-logic.js']
     },
 
     output: {
