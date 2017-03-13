@@ -36,7 +36,7 @@ const showBucketlistSuccess = (data) => {
   $('.content').empty().append(showBucketlistHtml);
   $('.number').text('');
   $('#map').show();
-  createMaps.createMap(store.mapPlaceId);
+  createMaps.createMap(store.mapPlaceId, store.activityDesc);
   $('#create-bl-item').hide();
 };
 

@@ -22,6 +22,7 @@ const onHideBucketlist = (event) => {
 const onShowBucketlist = function(event) {
   let id = event.target.dataset.id;
   store.mapPlaceId = $(this).attr("data-placeid");
+  store.activityDesc = $(this).attr("data-activity");
   event.preventDefault();
   api.showBucketlist(id)
     .done(ui.showBucketlistSuccess)
