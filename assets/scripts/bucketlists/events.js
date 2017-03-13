@@ -99,10 +99,7 @@ const onEditItem = function() {
 
   $(".update-activity-table").val(activity);
 
-console.log(saveCurrentCompleted);
-  // console.log(completed);
   if (saveCurrentCompleted === "Yes") {
-    console.log('its here true');
     $(this).parent().parent().children(".bl-completed").children('.checkbox-field').prop( "checked", true );
   } else {
     $(this).parent().parent().children(".bl-completed").children('.checkbox-field').prop( "checked", false );
@@ -153,9 +150,14 @@ const onUpdatedSubmit = function(event) {
   let placeid = $(submitButton).attr("data-placeid");
   // $(submitButton).attr("data-activity", activityVal);
   // $(submitButton).attr("data-completed", completedVal);
-  console.log(completed);
 
   editBucketListItem(id, location, activityVal, placeid, completed)
+    .then(() => {
+        $('.content').empty();
+        api.getBucketlist()
+          .then(ui.getBucketlistSuccess)
+          .catch(ui.getBucketlistFailure);
+    })
     .done(ui.updateBucketlistItemSuccess)
     .fail(ui.updateBucketlistItemFailure);
 };

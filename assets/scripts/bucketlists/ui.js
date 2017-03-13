@@ -23,10 +23,6 @@ const getBucketlistSuccess = function(data) {
   }
 };
 
-const getBucketlistFailure = () => {
-  console.log('get failure');
-};
-
 const hideBucketlist = () => {
   $('.content').empty();
   $('.number').hide();
@@ -68,7 +64,6 @@ const deleteBucketlistFailure = () => {
 };
 
 const updateBucketlistSuccess = () => {
-  console.log("bl update success");
   $('.log').text('Update success!').delay(1000).hide(3000);
   $('.log').show();
 };
@@ -78,21 +73,14 @@ const updateBucketlistFailure = () => {
   $('.log-fail').show();
 };
 
-const getSuccess = () => {
-  console.log('success');
-};
-
-const getFailure = () => {
-  console.log('failure');
-};
-
 const updateBucketlistItemSuccess = () => {
-  console.log('item updated');
-  // ('.checkbox-field').prop( "checked", false );
+  $('.log').text('Update success!').delay(1000).hide(3000);
+  $('.log').show();
 };
 
 const updateBucketlistItemFailure = () => {
-  console.log('item update failed');
+  $('.log-fail').text('Update failed, please make sure all the fields are filled out').delay(1000).hide(3000);
+  $('.log-fail').show();
 };
 
 module.exports = {
