@@ -7,7 +7,8 @@ const store = require('../store');
 const config = require('../config');
 // Bucketlist EVENTS
 
-const onGetBucketlist = function() {
+const onGetBucketlist = function(event) {
+  event.preventDefault();
   api.getBucketlist()
     .then(ui.getBucketlistSuccess)
     .catch(ui.getBucketlistFailure);
