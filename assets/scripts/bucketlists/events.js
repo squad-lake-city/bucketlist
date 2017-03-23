@@ -7,8 +7,7 @@ const store = require('../store');
 const config = require('../config');
 // Bucketlist EVENTS
 
-const onGetBucketlist = function(event) {
-  event.preventDefault();
+const onGetBucketlist = function() {
   api.getBucketlist()
     .then(ui.getBucketlistSuccess)
     .catch(ui.getBucketlistFailure);
@@ -20,10 +19,10 @@ const onHideBucketlist = (event) => {
 };
 
 const onShowBucketlist = function(event) {
+  event.preventDefault();
   let id = event.target.dataset.id;
   store.mapPlaceId = $(this).attr("data-placeid");
   store.activityDesc = $(this).attr("data-activity");
-  event.preventDefault();
   api.showBucketlist(id)
     .done(ui.showBucketlistSuccess)
     .fail(ui.showBucketlistFailure);
@@ -36,7 +35,7 @@ const onCreateBucketlist = function(event) {
     .then(ui.createBucketlistSuccess)
     .catch(ui.createBucketlistFailure)
     .then(onGetBucketlist);
-  onGetBucketlist(event);
+  onGetBucketlist();
 };
 
 const onDeleteBucketlist = function(event) {
