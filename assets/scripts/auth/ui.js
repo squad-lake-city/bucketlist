@@ -13,6 +13,7 @@ const signInSuccess = function() {
   $('#create-bl-item').show();
   $('#index-bl-item').show();
   $('#hide-index-bl-item').show();
+  $("#index-bl-item button").click();
 };
 
 
