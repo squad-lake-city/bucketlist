@@ -49,7 +49,7 @@ const createBucketlistSuccess = () => {
 };
 
 const createBucketlistFailure = () => {
-  $('.create-failure').text('Item not created. Make sure all forms are filled out & selected an auto-complete address from the dropdown').show(0).delay(5000).slideUp(500);
+  $('.create-failure').text('Item not created. Make sure all required fields are completed & you have selected an auto-complete address from the dropdown').show(0).delay(5000).slideUp(500);
   $('.create-failure').show();
 };
 

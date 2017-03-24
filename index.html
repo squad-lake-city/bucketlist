@@ -40,7 +40,7 @@
 
           <label class="password_confirmation">
                 Password Confirmation
-                <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="form-clear signup-password">
+                <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="form-clear signup-password signup-password-confirm">
           </label>
           <input type="submit" class="btn btn-default" name="submit" value="Sign-up">
         </fieldset>
@@ -124,13 +124,15 @@
       <p class="failure create-failure"></p>
       <p class="success create-success"></p>
       <div id="locationField">
-        <p class="form-field-desc">Location of Activity</p>
+        <p class="form-field-desc">Location of Activity<br><span class="required">*required</span>
+
+        </p>
         <input id="autocomplete" class="autocomplete form-clear" placeholder="Enter your address" type="text">
       </div>
       <input class="copied-autocomplete form-clear" name="bucketlist[location]" placeholder="hidden-location" type="hidden">
       <input class='copied-place-id form-clear' name="bucketlist[placeId]" placeholder="hidden-place_id" type="hidden">
       <br>
-      <p class="form-field-desc">Activity</p>
+      <p class="form-field-desc">Activity<br><span class="required">*required</span></p>
       <input class="create-form-clear form-clear" type="text" name="bucketlist[activity]" placeholder="activity">
       <br><br>
       <p class="form-field-desc">Activity Completed? Please check the box if activity completed</p>
