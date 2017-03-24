@@ -70,7 +70,16 @@ const onUpdateBucketlist = function(event) {
 
 const onEditItem = function() {
   // let buttonParent = $(this).parent();
-  // let id = $(this).attr("data-id");
+
+
+  // To prevent multiple edits
+  let dataId = $(this).attr("data-id");
+  let currentbuttonDataId = $(this).parent().children(".edit-bucketlist-item").attr("data-id");
+
+  if ( dataId ===  currentbuttonDataId) {
+    $(".content .edit-bucketlist-item").hide();
+  }
+
   let activity = $(this).attr("data-activity");
   // let location = $(this).attr("data-location");
   let completed = $(this).attr("data-completed");
