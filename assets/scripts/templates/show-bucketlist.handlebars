@@ -8,6 +8,7 @@
         <th>Completed</th>
         <th> DELETE </th>
         <th> EDIT </th>
+        <th class="cancel-edit-th">Cancel</th>
       </tr>
     </thead>
     <tr>
@@ -24,6 +25,7 @@
         </td>
         <td><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="remove-bucketlist-item glyphicon glyphicon-remove-sign"></button></td>
         <td><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="edit-bucketlist-item glyphicon glyphicon-edit"></button></td>
+        <td class="cancel-edit-td"><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="cancel-bucketlist-edit glyphicon glyphicon-triangle-left"></button></td>
     </tr>
     </tbody>
   </table>

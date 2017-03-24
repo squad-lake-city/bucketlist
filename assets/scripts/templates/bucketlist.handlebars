@@ -8,6 +8,7 @@
       <th> VIEW </th>
       <th> DELETE </th>
       <th> EDIT </th>
+      <th class="cancel-edit-th">Cancel</th>
     </tr>
   </thead>
   {{#each bucketlists as |bucketlist|}}
@@ -26,6 +27,7 @@
         <td><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="show-bucketlist btn btn-default">View</button></td>
         <td><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="remove-bucketlist-item glyphicon glyphicon-remove-sign"></button></td>
         <td><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="edit-bucketlist-item glyphicon glyphicon-edit"></button></td>
+        <td class="cancel-edit-td"><button data-id="{{bucketlist._id}}" data-location="{{bucketlist.location}}" data-activity="{{bucketlist.activity}}" data-completed="{{bucketlist.completed}}" data-placeId="{{bucketlist.placeId}}" type="button" name="button" class="cancel-bucketlist-edit glyphicon glyphicon-triangle-left"></button></td>
     </tr>
     </tbody>
   {{/each}}

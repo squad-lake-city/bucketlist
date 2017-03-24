@@ -12,6 +12,15 @@ $light-green: #90ee90; // Hides Default Address Table
   display: none;
 }
 
+.bl-activity input{
+  max-width: 100%;
+}
+
+// default hide cancel edit button
+.cancel-edit-td, .cancel-edit-th{
+  display: none;
+}
+
 #map {
   border: 10px solid $blue;
   border-radius: 10px;
