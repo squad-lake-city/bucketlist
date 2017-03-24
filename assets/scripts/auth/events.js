@@ -11,7 +11,11 @@ const store = require('../store');
 const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  if (data.credentials.password === data.credentials.password_confirmation) {
+  let dataCredentialsMatch = (data.credentials.password === data.credentials.password_confirmation);
+  let passwordBlank = ( $(".signup-password").val() !== "" );
+  let passwordConfirmBlank = ( $(".signup-password-confirm").val() !== "" );
+
+  if (dataCredentialsMatch && passwordBlank && passwordConfirmBlank) {
     api.signUp(data)
       .then(ui.signUpSuccess)
       .catch(ui.signUpFailure);
