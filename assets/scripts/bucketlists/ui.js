@@ -41,7 +41,7 @@ const showBucketlistSuccess = (data) => {
 };
 
 const createBucketlistSuccess = () => {
-  $('.create-success').text('Item created!').delay(1000).hide(3000);
+  $('.create-success').text('Item created!').show(0).delay(5000).slideUp(500);
   $('.create-success').show();
   $('#map').hide();
   $('.form-clear').val('');
@@ -54,34 +54,34 @@ const createBucketlistFailure = () => {
 };
 
 const deleteBucketlistSuccess = () => {
-  $('.log').text('Delete success!').delay(1000).hide(3000);
+  $('.log').text('Delete success!').show(0).delay(5000).slideUp(500);
   $('.log').show();
   $('#map').hide();
 };
 
 const deleteBucketlistFailure = () => {
-  $('.log-fail').text('Item not deleted').delay(1000).hide(3000);
+  $('.log-fail').text('Item not deleted').show(0).delay(5000).slideUp(500);
   $('.log-fail').show();
 };
 
 const updateBucketlistSuccess = () => {
-  $('.log').text('Update success!').delay(1000).hide(3000);
+  $('.log').text('Update success!').show(0).delay(5000).slideUp(500);
   $('.log').show();
 };
 
 const updateBucketlistFailure = () => {
-  $('.log-fail').text('Update failed, please make sure all the fields are filled out').delay(1000).hide(3000);
+  $('.log-fail').text('Update failed, please make sure all the fields are filled out').show(0).delay(5000).slideUp(500);
   $('.log-fail').show();
 };
 
 const updateBucketlistItemSuccess = () => {
-  $('.log').text('Update success!').delay(1000).hide(3000);
+  $('.log').text('Update success!').show(0).delay(5000).slideUp(500);
   $('.log').show();
   $("#show-bucketlist-btn").click();
 };
 
 const updateBucketlistItemFailure = () => {
-  $('.log-fail').text('Update failed, please make sure all the fields are filled out').delay(1000).hide(3000);
+  $('.log-fail').text('Update failed, please make sure all the fields are filled out').show(0).delay(5000).slideUp(500);
   $('.log-fail').show();
 };
 

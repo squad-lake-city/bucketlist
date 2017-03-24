@@ -1,7 +1,7 @@
 'use strict';
 
 const signInSuccess = function() {
-  $('.signin-success').text('Signed in!').delay(1000).hide(3000);
+  $('.signin-success').text('Signed in!').show(0).delay(5000).slideUp(500);
   $('.signin-success').show();
   $('#sign-out').show();
   $('.form-clear').val('');
@@ -19,14 +19,14 @@ const signInSuccess = function() {
 
 const signInFailure = function() {
   $("#sign-in").addClass("open");
-  $('.signin-failure').text('Failed sign-in attempt. User email may not exist and/or passwords may not match').delay(1000).hide(3000);
+  $('.signin-failure').text('Failed sign-in attempt. User email may not exist and/or passwords may not match').show(0).delay(5000).slideUp(500);
   $('.signin-failure').show();
 };
 
 const signUpSuccess = function() {
   let transferEmail = $("#sign-up .signup-email").val();
   $("#sign-in").addClass("open");
-  $('.signup-success').text('Signed up!').delay(1000).hide(3000);
+  $('.signup-success').text('Signed up!').show(0).delay(5000).slideUp(500);
   $('.signup-success').show();
   $('#sign-up').hide();
   $('.form-clear').val('');
@@ -35,7 +35,7 @@ const signUpSuccess = function() {
 
 const signUpFailure = function() {
   $("#sign-up").addClass("open");
-  $('.signup-failure').text('Failed sign-up. The user email you used may be taken and/or your passwords match').delay(1000).hide(3000);
+  $('.signup-failure').text('Failed sign-up. The user email you used may be taken and/or your passwords match').show(0).delay(5000).slideUp(500);
   $('.signup-failure').show();
 };
 
@@ -46,12 +46,12 @@ const changePasswordSuccess = function() {
 };
 
 const changePasswordFailure = function() {
-  $('.changepw-failure').text('Change password attempt failed. Make sure you correctly entered your original password.').delay(1000).hide(3000);
+  $('.changepw-failure').text('Change password attempt failed. Make sure you correctly entered your original password.').show(0).delay(5000).slideUp(500);
   $('.changepw-failure').show();
 };
 
 const signOutSuccess = function() {
-  $('.signout-success').text('signed out!').delay(1000).hide(3000);
+  $('.signout-success').text('signed out!').show(0).delay(5000).slideUp(500);
   $('.signout-success').show();
   $('#sign-up').show();
   $('#sign-in').show();
@@ -68,7 +68,7 @@ const signOutSuccess = function() {
 };
 
 const signOutFailure = function() {
-  $('.signout-failure').text('failed sign-out').delay(1000).hide(3000);
+  $('.signout-failure').text('failed sign-out').show(0).delay(5000).slideUp(500);
   $('.signout-failure').show();
 };
 
