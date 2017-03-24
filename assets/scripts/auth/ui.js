@@ -40,7 +40,7 @@ const signUpFailure = function() {
 };
 
 const changePasswordSuccess = function() {
-  $('.changepw-success').text('Successfully changed your password').delay(1000).hide(3000);
+  $('.changepw-success').text('Successfully changed your password').show(0).delay(5000).slideUp(500);
   $('.changepw-success').show();
   $('.form-clear').val('');
 };
