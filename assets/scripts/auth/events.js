@@ -8,62 +8,53 @@ const ui = require('./ui');
 
 const store = require('../store');
 
-const onSignUp = function (event) {
-  // event.preventDefault();
-  //
-  // let data = getFormFields(event.target);
-  //
-  // api.signUp(data)
-  // .then(ui.signUpSuccess)
-  // .catch(ui.signUpFailure)
-  // ;
+const onSignUp = function(event) {
   event.preventDefault();
-let data = getFormFields(event.target);
-if (data.credentials.password === data.credentials.password_confirmation) {
-  api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
-    ;
+  let data = getFormFields(event.target);
+  if (data.credentials.password === data.credentials.password_confirmation) {
+    api.signUp(data)
+      .then(ui.signUpSuccess)
+      .catch(ui.signUpFailure);
   } else {
     ui.signUpFailure();
   }
-
 };
 
-const onSignIn = function (event) {
+const onSignIn = function(event) {
   event.preventDefault();
 
   let data = getFormFields(event.target);
 
   api.signIn(data)
-  .then((response) => {
-    store.user = response.user;
-    return store;
-  })
-  .then(ui.signInSuccess)
-  .catch(ui.signInFailure)
-  ;
+    .then((response) => {
+      store.user = response.user;
+      return store;
+    })
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure);
 };
 
-const onChangePassword = function (event) {
+const onChangePassword = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  api.changePassword(data)
-  .then(ui.changePasswordSuccess)
-  .catch(ui.changePasswordFailure)
-  ;
+  if ( $(".new-password").val() === "" ) {
+    $('.changepw-failure').text('Change password attempt failed. Make sure you correctly entered your original password.').show(0).delay(5000).slideUp(500);
+  } else {
+    api.changePassword(data)
+      .then(ui.changePasswordSuccess)
+      .catch(ui.changePasswordFailure);
+  }
 };
 
-const onSignOut = function (event) {
+const onSignOut = function(event) {
   event.preventDefault();
   api.signOut()
-  .then(() => {
-    delete store.user;
-    return store;
-  })
-  .then(ui.signOutSuccess)
-  .catch(ui.signOutFailure)
-  ;
+    .then(() => {
+      delete store.user;
+      return store;
+    })
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure);
 };
 
 const addHandlers = () => {
