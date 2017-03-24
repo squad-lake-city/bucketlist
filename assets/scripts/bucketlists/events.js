@@ -34,9 +34,7 @@ const onCreateBucketlist = function(event) {
   let data = getFormFields(event.target);
   api.createBucketlist(data)
     .then(ui.createBucketlistSuccess)
-    .catch(ui.createBucketlistFailure)
-    .then(onGetBucketlist);
-  onGetBucketlist();
+    .catch(ui.createBucketlistFailure);
 };
 
 const onDeleteBucketlist = function(event) {

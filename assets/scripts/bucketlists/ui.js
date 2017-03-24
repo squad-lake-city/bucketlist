@@ -45,6 +45,7 @@ const createBucketlistSuccess = () => {
   $('.create-success').show();
   $('#map').hide();
   $('.form-clear').val('');
+  $("#index-bl-item button").click();
 };
 
 const createBucketlistFailure = () => {
