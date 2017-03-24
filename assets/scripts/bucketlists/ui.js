@@ -11,6 +11,7 @@ const getBucketlistSuccess = function(data) {
   let displayBucketlistsHtml = displayBucketlistTemplate({
     bucketlists: data.bucketlists
   });
+  $('#index-bl-item').hide();
   $("#create-bl-item").hide();
   $("#insert-checkbox-create").children().remove();
   if (data.bucketlists.length >= 0) {
@@ -24,6 +25,7 @@ const getBucketlistSuccess = function(data) {
   }
   $("#create-bl-item").hide();
   $('#create-form-toggle-btn').show();
+  $('#hide-index-bl-item').show();
 
 };
 
@@ -31,6 +33,9 @@ const hideBucketlist = () => {
   $('.content').empty();
   $('.number').hide();
   $('#map').hide();
+  $('#index-bl-item').show();
+  $('#hide-index-bl-item').hide();
+
 };
 
 const showBucketlistSuccess = (data) => {
@@ -51,6 +56,8 @@ const showBucketlistCreateForm = () => {
   $(".complete-bucketlist-table").remove();
   $("#create-bl-item").show();
   $('#create-form-toggle-btn').hide();
+  $('#index-bl-item').show();
+  $('#hide-index-bl-item').hide();
 
 };
 
