@@ -58,6 +58,7 @@ const signOutSuccess = function() {
   $('#change-password').hide();
   $('#sign-out').hide();
   $('.content').hide();
+  $(".number").hide();
   $('#create-bl-item').hide();
   $('#index-bl-item').hide();
   $('#hide-index-bl-item').hide();
