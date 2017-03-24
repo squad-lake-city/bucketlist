@@ -11,7 +11,8 @@ const getBucketlistSuccess = function(data) {
   let displayBucketlistsHtml = displayBucketlistTemplate({
     bucketlists: data.bucketlists
   });
-  $('#create-bl-item').show();
+  $("#create-bl-item").hide();
+  $("#insert-checkbox-create").children().remove();
   if (data.bucketlists.length >= 0) {
     $('.number').text("You have " + data.bucketlists.length + " items on your bucketlist");
     $('.number').show();
@@ -21,6 +22,9 @@ const getBucketlistSuccess = function(data) {
     $('.content').empty().append(displayBucketlistsHtml);
     $('.number').val('');
   }
+  $("#create-bl-item").hide();
+  $('#create-form-toggle-btn').show();
+
 };
 
 const hideBucketlist = () => {
@@ -37,14 +41,27 @@ const showBucketlistSuccess = (data) => {
   $('.number').text('');
   $('#map').show();
   createMaps.createMap(store.mapPlaceId, store.activityDesc);
-  $('#create-bl-item').hide();
+  $("#create-bl-item").hide();
+  $("#insert-checkbox-create").children().remove();
 };
+
+const showBucketlistCreateForm = () => {
+  let createFormHtml = '<input name="bucketlist[completed]" type="hidden" value="false"><input class="checkbox-field" name="bucketlist[completed]" placeholder="Completed?" type="checkbox" value="true">';
+  $("#insert-checkbox-create").append(createFormHtml);
+  $(".complete-bucketlist-table").remove();
+  $("#create-bl-item").show();
+  $('#create-form-toggle-btn').hide();
+
+};
+
 
 const createBucketlistSuccess = () => {
   $('.create-success').text('Item created!').show(0).delay(5000).slideUp(500);
   $('.create-success').show();
   $('#map').hide();
   $('.form-clear').val('');
+  $("#create-bl-item").hide();
+  $("#insert-checkbox-create").children().remove();
   $("#index-bl-item button").click();
 };
 
@@ -67,6 +84,8 @@ const deleteBucketlistFailure = () => {
 const updateBucketlistSuccess = () => {
   $('.log').text('Update success!').show(0).delay(5000).slideUp(500);
   $('.log').show();
+  $("#create-bl-item").hide();
+  $("#insert-checkbox-create").children().remove();
 };
 
 const updateBucketlistFailure = () => {
@@ -76,6 +95,8 @@ const updateBucketlistFailure = () => {
 
 const updateBucketlistItemSuccess = () => {
   $('.log').text('Update success!').show(0).delay(5000).slideUp(500);
+  $("#create-bl-item").hide();
+  $("#insert-checkbox-create").children().remove();
   $('.log').show();
   $("#show-bucketlist-btn").click();
 };
@@ -89,14 +110,13 @@ module.exports = {
   createBucketlistSuccess,
   createBucketlistFailure,
   getBucketlistSuccess,
-  // getBucketlistFailure,
   hideBucketlist,
   showBucketlistSuccess,
-  // showBucketlistFailure,
   updateBucketlistSuccess,
   updateBucketlistFailure,
   deleteBucketlistSuccess,
   deleteBucketlistFailure,
   updateBucketlistItemSuccess,
   updateBucketlistItemFailure,
+  showBucketlistCreateForm,
 };

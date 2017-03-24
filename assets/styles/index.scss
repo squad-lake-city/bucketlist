@@ -8,6 +8,15 @@ $sky-blue: #87ceeb;
 $white: #fff;
 $light-green: #90ee90; // Hides Default Address Table
 
+// onload hide
+#create-bl-item {
+  display: none;
+}
+
+#create-form-toggle-btn {
+  display: none;
+}
+
 #address {
   display: none;
 }

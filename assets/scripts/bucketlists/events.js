@@ -19,6 +19,12 @@ const onHideBucketlist = (event) => {
   ui.hideBucketlist();
 };
 
+const onShowCreateForm = (event) => {
+  event.preventDefault();
+  ui.showBucketlistCreateForm();
+};
+
+
 const onShowBucketlist = function(event) {
   event.preventDefault();
   let id = event.target.dataset.id;
@@ -74,6 +80,12 @@ const onEditItem = function() {
   $(".cancel-bucketlist-edit").hide();
   $(".cancel-edit-td").show();
   $(".cancel-edit-th").show();
+<<<<<<< HEAD
+=======
+  $("#create-bl-item").hide();
+  $("#insert-checkbox-create").children().remove();
+
+>>>>>>> resubmit
 
 
   // To prevent multiple edits
@@ -179,6 +191,7 @@ const onUpdatedSubmit = function(event) {
 const addHandlers = () => {
   $('#index-bl-item').on('submit', onGetBucketlist);
   $('#hide-index-bl-item').on('submit', onHideBucketlist);
+  $('#create-form-toggle-btn').on('submit', onShowCreateForm);
   $('.content').on('click', '.show-bucketlist', onShowBucketlist);
   $('#create-bl-item').on('submit', onCreateBucketlist);
   $('.content').on('click', '.remove-bucketlist-item', onDeleteBucketlist);
