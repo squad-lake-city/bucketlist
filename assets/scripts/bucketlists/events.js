@@ -80,8 +80,9 @@ const onEditItem = function() {
   $(".cancel-bucketlist-edit").hide();
   $(".cancel-edit-td").show();
   $(".cancel-edit-th").show();
-  $(".create-bl-item").hide();
+  $("#create-bl-item").hide();
   $("#insert-checkbox-create").children().remove();
+
 
 
   // To prevent multiple edits

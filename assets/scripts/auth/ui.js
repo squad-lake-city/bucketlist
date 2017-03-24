@@ -70,7 +70,7 @@ const signOutSuccess = function() {
   $('#map').hide();
   $('.form-clear').val('');
   $('.checkbox-field').prop('checked', false);
-  $(".create-bl-item").hide();
+  $("#create-bl-item").hide();
   $("#insert-checkbox-create").children().remove();
   $("#create-form-toggle-btn").hide();
   $("#create-bl-item").hide();
