@@ -63,6 +63,7 @@ const signOutSuccess = function() {
   $('#hide-index-bl-item').hide();
   $('#map').hide();
   $('.form-clear').val('');
+  $('.checkbox-field').prop('checked', false);
 };
 
 const signOutFailure = function() {
