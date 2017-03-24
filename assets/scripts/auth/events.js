@@ -66,7 +66,7 @@ const addHandlers = () => {
   $('#change-password').hide();
   $('#sign-in').show();
   $('#sign-up').show();
-  $('#create-bl-item').hide();
+  // $('#create-bl-item').hide();
   $('#hide-index-bl-item').hide();
   $('#index-bl-item').hide();
   $('#map').hide();

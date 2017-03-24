@@ -10,7 +10,6 @@ const signInSuccess = function() {
   $('#sign-up').hide();
   $('#change-password').show();
   $('#sign-out').show();
-  $('#create-bl-item').show();
   $('#index-bl-item').show();
   $('#hide-index-bl-item').show();
   $("#index-bl-item button").click();
@@ -59,7 +58,7 @@ const signOutSuccess = function() {
   $('#sign-out').hide();
   $('.content').hide();
   $(".number").hide();
-  $('#create-bl-item').hide();
+  // $('#create-bl-item').hide();
   $('#index-bl-item').hide();
   $('#hide-index-bl-item').hide();
   $('#map').hide();

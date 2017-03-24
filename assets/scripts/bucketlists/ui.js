@@ -11,7 +11,6 @@ const getBucketlistSuccess = function(data) {
   let displayBucketlistsHtml = displayBucketlistTemplate({
     bucketlists: data.bucketlists
   });
-  $('#create-bl-item').show();
   if (data.bucketlists.length >= 0) {
     $('.number').text("You have " + data.bucketlists.length + " items on your bucketlist");
     $('.number').show();
@@ -37,14 +36,25 @@ const showBucketlistSuccess = (data) => {
   $('.number').text('');
   $('#map').show();
   createMaps.createMap(store.mapPlaceId, store.activityDesc);
-  $('#create-bl-item').hide();
+  // $('#create-bl-item').hide();
 };
+
+const showBucketlistCreateForm = () => {
+  let createFormHtml = '<input name="bucketlist[completed]" type="hidden" value="false"><input class="checkbox-field" name="bucketlist[completed]" placeholder="Completed?" type="checkbox" value="true">';
+  $("#insert-checkbox-create").append(createFormHtml);
+  $(".complete-bucketlist-table").remove();
+  $("#create-bl-item").show();
+
+};
+
 
 const createBucketlistSuccess = () => {
   $('.create-success').text('Item created!').show(0).delay(5000).slideUp(500);
   $('.create-success').show();
   $('#map').hide();
   $('.form-clear').val('');
+  $("#create-bl-item").hide();
+  $("#insert-checkbox-create").children().remove();
   $("#index-bl-item button").click();
 };
 
@@ -89,14 +99,13 @@ module.exports = {
   createBucketlistSuccess,
   createBucketlistFailure,
   getBucketlistSuccess,
-  // getBucketlistFailure,
   hideBucketlist,
   showBucketlistSuccess,
-  // showBucketlistFailure,
   updateBucketlistSuccess,
   updateBucketlistFailure,
   deleteBucketlistSuccess,
   deleteBucketlistFailure,
   updateBucketlistItemSuccess,
   updateBucketlistItemFailure,
+  showBucketlistCreateForm,
 };
