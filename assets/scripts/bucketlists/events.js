@@ -70,15 +70,21 @@ const onUpdateBucketlist = function(event) {
 
 const onEditItem = function() {
   // let buttonParent = $(this).parent();
+  $(".edit-bucketlist-item").hide();
+  $(".cancel-bucketlist-edit").hide();
+  $(".cancel-edit-td").show();
+  $(".cancel-edit-th").show();
 
 
   // To prevent multiple edits
   let dataId = $(this).attr("data-id");
   let currentbuttonDataId = $(this).parent().children(".edit-bucketlist-item").attr("data-id");
+  let currentCancelButton = $(this).parent().parent().children(".cancel-edit-td").children(".cancel-bucketlist-edit");
 
-  if ( dataId ===  currentbuttonDataId) {
-    $(".content .edit-bucketlist-item").hide();
-  }
+  $(this).parent().show();
+  $(".cancel-edit-td").show();
+  $(currentCancelButton).show();
+  $(".cancel-edit-th").show();
 
   let activity = $(this).attr("data-activity");
   // let location = $(this).attr("data-location");
@@ -176,9 +182,9 @@ const addHandlers = () => {
   $('.content').on('click', '.show-bucketlist', onShowBucketlist);
   $('#create-bl-item').on('submit', onCreateBucketlist);
   $('.content').on('click', '.remove-bucketlist-item', onDeleteBucketlist);
-  // $('.content').on('submit', '.edit-bucketlist', onUpdateBucketlist);
   $('.content').on('click', '.edit-bucketlist-item', onEditItem);
   $('.content').on('click', '.dummy-update-btn', onUpdatedSubmit);
+  $('.content').on('click', '.cancel-bucketlist-edit', onGetBucketlist);
 
 };
 
