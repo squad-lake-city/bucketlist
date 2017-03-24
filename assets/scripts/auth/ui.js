@@ -13,9 +13,11 @@ const signInSuccess = function() {
   $('#index-bl-item').show();
   $('#hide-index-bl-item').show();
   $("#create-form-toggle-btn").show();
-  $("#index-bl-item button").click();
-  $(".create-bl-item").hide();
+  // $("#index-bl-item button").click();
+  $("#create-bl-item").hide();
   $("#insert-checkbox-create").children().remove();
+  $("#hide-index-bl-item button").click();
+
 };
 
 
@@ -70,12 +72,16 @@ const signOutSuccess = function() {
   $('.checkbox-field').prop('checked', false);
   $(".create-bl-item").hide();
   $("#insert-checkbox-create").children().remove();
-  $("#create-form-toggle-btn");
+  $("#create-form-toggle-btn").hide();
+  $("#create-bl-item").hide();
+
+
 };
 
 const signOutFailure = function() {
   $('.signout-failure').text('failed sign-out').show(0).delay(5000).slideUp(500);
   $('.signout-failure').show();
+
 };
 
 
