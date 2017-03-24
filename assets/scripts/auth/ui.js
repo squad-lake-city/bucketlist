@@ -12,7 +12,10 @@ const signInSuccess = function() {
   $('#sign-out').show();
   $('#index-bl-item').show();
   $('#hide-index-bl-item').show();
+  $("#create-form-toggle-btn").show();
   $("#index-bl-item button").click();
+  $(".create-bl-item").hide();
+  $("#insert-checkbox-create").children().remove();
 };
 
 
@@ -59,11 +62,15 @@ const signOutSuccess = function() {
   $('.content').hide();
   $(".number").hide();
   // $('#create-bl-item').hide();
+  $("#create-form-toggle-btn").hide();
   $('#index-bl-item').hide();
   $('#hide-index-bl-item').hide();
   $('#map').hide();
   $('.form-clear').val('');
   $('.checkbox-field').prop('checked', false);
+  $(".create-bl-item").hide();
+  $("#insert-checkbox-create").children().remove();
+  $("#create-form-toggle-btn");
 };
 
 const signOutFailure = function() {
