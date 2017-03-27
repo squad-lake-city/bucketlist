@@ -29,13 +29,13 @@ const createMap = function(tempPlaceId, activityText) {
              map: map,
              position: results[0].geometry.location
            });
-           console.log(results[0].formatted_address);
+           //console.log(results[0].formatted_address);
 
            let address = results[0].formatted_address.toString();
            let activity = activityText;
 
            let activityArray = activity.split(" ");
-           console.log(activityArray);
+           //console.log(activityArray);
            if (activityArray.length > 3) {
               let tempactivity = [];
               for ( let i = 0; i <3 ; i ++ ) {
