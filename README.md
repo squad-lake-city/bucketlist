@@ -17,6 +17,10 @@ bucketlist CRUD actions on the front-end by creating dummy forms. Then, we had
 to do research on the Google Maps API. This was the most difficult part to
 implement.
 
+## Dependencies
+  Install dependencies with `npm install`.
+
+
 ## User Stories
   - Auth
     - user can to create an account.
