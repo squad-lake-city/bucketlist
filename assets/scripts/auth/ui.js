@@ -14,8 +14,8 @@ const signInSuccess = function() {
   $("#create-form-toggle-btn").show();
   $("#create-bl-item").hide();
   $("#insert-checkbox-create").children().remove();
-  $('#hide-index-bl-item').hide();
-
+  $("#hide-index-bl-item button").click();
+  $("#hide-index-bl-item").hide();
 
 };
 

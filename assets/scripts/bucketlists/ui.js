@@ -11,7 +11,7 @@ const getBucketlistSuccess = function(data) {
   let displayBucketlistsHtml = displayBucketlistTemplate({
     bucketlists: data.bucketlists
   });
-  $('#index-bl-item').hide();
+  $("#index-bl-item").hide();
   $("#create-bl-item").hide();
   $("#insert-checkbox-create").children().remove();
   if (data.bucketlists.length >= 0) {
@@ -48,6 +48,9 @@ const showBucketlistSuccess = (data) => {
   createMaps.createMap(store.mapPlaceId, store.activityDesc);
   $("#create-bl-item").hide();
   $("#insert-checkbox-create").children().remove();
+  $("#create-form-toggle-btn").hide();
+  $("#index-bl-item").show();
+  $("#hide-index-bl-item").hide();
 };
 
 const showBucketlistCreateForm = () => {
