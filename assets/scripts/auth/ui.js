@@ -11,9 +11,7 @@ const signInSuccess = function() {
   $('#change-password').show();
   $('#sign-out').show();
   $('#index-bl-item').show();
-  $('#hide-index-bl-item').show();
   $("#create-form-toggle-btn").show();
-  // $("#index-bl-item button").click();
   $("#create-bl-item").hide();
   $("#insert-checkbox-create").children().remove();
   $("#hide-index-bl-item button").click();
