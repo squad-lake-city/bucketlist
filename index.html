@@ -16,61 +16,67 @@
   <script src="public/maps.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
-<body class="container-fluid">
-  <h1>Bucketlist</h1>
+<body class="container-fluid" style="display:none">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <h1>Bucklist.io</h1>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="btn-group sign-up-sign-in" id="sign-up">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign Up
+        </button>
+        <div class="dropdown-menu">
+          <form class="auth">
+            <p class="failure signup-failure"></p>
+            <p class="success signup-success"></p>
+            <fieldset>
+              <label class="email">
+                    Email
+                    <input class="form-clear signup-email" type="email" name="credentials[email]">
+              </label>
 
-  <div class="btn-group" id="sign-up">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Sign Up
-    </button>
-    <div class="dropdown-menu">
-      <form class="auth">
-        <p class="failure signup-failure"></p>
-        <p class="success signup-success"></p>
-        <fieldset>
-          <label class="email">
-                Email
-                <input class="form-clear signup-email" type="email" name="credentials[email]">
-          </label>
+              <label class="password">
+                    Password
+                    <input id="password" type="password" name="credentials[password]" class="form-clear signup-password">
+              </label>
 
-          <label class="password">
-                Password
-                <input id="password" type="password" name="credentials[password]" class="form-clear signup-password">
-          </label>
+              <label class="password_confirmation">
+                    Password Confirmation
+                    <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="form-clear signup-password signup-password-confirm">
+              </label>
+              <input type="submit" class="btn btn-default" name="submit" value="Sign-up">
+            </fieldset>
+          </form>
+        </div>
+      </div>
 
-          <label class="password_confirmation">
-                Password Confirmation
-                <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="form-clear signup-password signup-password-confirm">
-          </label>
-          <input type="submit" class="btn btn-default" name="submit" value="Sign-up">
-        </fieldset>
-      </form>
+      <div class="btn-group sign-up-sign-in" id="sign-in">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign In
+        </button>
+        <div class="dropdown-menu">
+          <form class="auth">
+            <p class="failure signin-failure"></p>
+            <p class="success signin-success"></p>
+            <fieldset>
+              <label class="email">
+                  Email
+                <input type="email" name="credentials[email]" class="form-clear signin-email">
+              </label>
+
+              <label class="password">
+                  Password
+                  <input type="password" name="credentials[password]" class="form-clear signin-password">
+              </label>
+              <input type="submit" class="btn btn-default" name="submit" value="Sign-in">
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="btn-group" id="sign-in">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Sign In
-    </button>
-    <div class="dropdown-menu">
-      <form class="auth">
-        <p class="failure signin-failure"></p>
-        <p class="success signin-success"></p>
-        <fieldset>
-          <label class="email">
-              Email
-            <input type="email" name="credentials[email]" class="form-clear signin-email">
-          </label>
-
-          <label class="password">
-              Password
-              <input type="password" name="credentials[password]" class="form-clear signin-password">
-          </label>
-          <input type="submit" class="btn btn-default" name="submit" value="Sign-in">
-        </fieldset>
-      </form>
-    </div>
-  </div>
   <div class="btn-group" id="change-password">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Change Password
@@ -104,6 +110,30 @@
     <p class="success signout-success"></p>
   </div>
 
+  <div id="homepage">
+    <h2>Welcome!</h2>
+    <div class="row">
+      <div class="col-xs-6">
+        <p>Buckelist.io is a web application that allows users to list and manage life goals.</p>
+        <p>This application integrates Google Maps to help the user visualize and plan ways in which to achieve a given goal.</p>
+        <p>Please sign-up and sign-in above</p>
+      </div>
+      <div class="col-xs-6">
+        <img class="homepage-img" src="https://user-images.githubusercontent.com/13546265/32138277-d3bbf8f2-bbfd-11e7-97b5-fb85f59983ba.png" alt="Google Maps Bucketlist" />
+      </div>
+    </div>
+    <!-- <h2>Welcome!</h2>
+    <div class="homepage-image">
+      <img src="https://user-images.githubusercontent.com/13546265/32138277-d3bbf8f2-bbfd-11e7-97b5-fb85f59983ba.png" alt="Google Maps Bucketlist" />
+    </div>
+    <div class="homepage-text">
+      <p>Buckelist.io is a web application that allows users to list and manage life goals.</p>
+      <p>This application integrates Google Maps to help the user visualize and plan ways in which to achieve a given goal.</p>
+      <p>Please sign-up and sign-in above</p>
+    </div> -->
+  </div>
+
+  <div class="clearfix"></div>
 
   <form class="item" id="index-bl-item">
       <div class="form-group">
