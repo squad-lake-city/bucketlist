@@ -1,6 +1,7 @@
 'use strict';
 
 const signInSuccess = function() {
+  $("#homepage").hide();
   $('.signin-success').text('Signed in!').show(0).delay(5000).slideUp(500);
   $('.signin-success').show();
   $('#sign-out').show();
@@ -43,17 +44,20 @@ const signUpFailure = function() {
 };
 
 const changePasswordSuccess = function() {
+  $("#homepage").hide();
   $('.changepw-success').text('Successfully changed your password').show(0).delay(5000).slideUp(500);
   $('.changepw-success').show();
   $('.form-clear').val('');
 };
 
 const changePasswordFailure = function() {
+  $("#homepage").hide();
   $('.changepw-failure').text('Change password attempt failed. Make sure you correctly entered your original password.').show(0).delay(5000).slideUp(500);
   $('.changepw-failure').show();
 };
 
 const signOutSuccess = function() {
+  $("#homepage").show();
   $('.signout-success').text('signed out!').show(0).delay(5000).slideUp(500);
   $('.signout-success').show();
   $('#sign-up').show();
